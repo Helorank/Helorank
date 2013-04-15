@@ -17,8 +17,4 @@
 import webapp2
 from urls import routes
 
-class MainHandler(webapp2.RequestHandler):
-  def get(self):
-    self.response.write('Hello world!')
-
 app = webapp2.WSGIApplication(routes, debug=True)
