@@ -10,9 +10,8 @@ class IndexHandler(webapp2.RequestHandler):
     kyleKey = kyle.put()
     codyKey = cody.put()
 
-    firstGame = GameResult(players=[kyleKey,codyKey])
+    firstGame = GameResult(playerKeys=[kyleKey,codyKey])
+    firstGameKey = firstGame.put()
     firstGame.calculateNewELOs()
-    logging.info("Kyle ELO: " + str(kyle.eloRating))
-    logging.info("Cody ELO: " + str(cody.eloRating))
     template = jinja_environment.get_template('index.html')
     self.response.out.write(template.render({}))
