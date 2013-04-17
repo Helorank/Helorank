@@ -28,8 +28,8 @@
 		  window.fbAsyncInit = function() {
 		    // init the FB JS SDK
 		    FB.init({
-		      appId      : '436592413100742',                        // App ID from the app dashboard
-		      channelUrl : 'riskrank.appspot.com/views/channel.html', // Channel file for x-domain comms
+		      appId      : '187156478098070',                        // App ID from the app dashboard
+		      channelUrl : 'helorank.appspot.com/views/channel.html', // Channel file for x-domain comms
 		      status     : true,                                 // Check Facebook Login status
 		      xfbml      : true                                  // Look for social plugins on the page
 		    });
@@ -38,6 +38,7 @@
 		    FB.getLoginStatus(function(response) {
 			  if (response.status === 'connected') {
 			    // connected
+			    alert("You are connected.");
 			  } else if (response.status === 'not_authorized') {
 			    // not_authorized
 			    login();
@@ -50,7 +51,7 @@
 			function login() {
 			    FB.login(function(response) {
 			        if (response.authResponse) {
-			            alert("Congrats");
+			            
 			        } else {
 			            // cancelled
 			        }
