@@ -30,7 +30,7 @@
 		    FB.init({
 		      appId      : '187156478098070',                        // App ID from the app dashboard
 		      channelUrl : 'helorank.appspot.com/views/channel.html', // Channel file for x-domain comms
-		      status     : true,                                 // Check Facebook Login status
+		      status     : true                                 // Check Facebook Login status
 		      xfbml      : true                                  // Look for social plugins on the page
 		    });
 		
@@ -38,7 +38,6 @@
 		    FB.getLoginStatus(function(response) {
 			  if (response.status === 'connected') {
 			    // connected
-			    alert("You are connected.");
 			  } else if (response.status === 'not_authorized') {
 			    // not_authorized
 			    login();
@@ -48,14 +47,22 @@
 			  }
 			});
 		  };
+		  
+		  	// Additional FB code
 			function login() {
 			    FB.login(function(response) {
 			        if (response.authResponse) {
-			            
+			            // success
 			        } else {
 			            // cancelled
 			        }
 			    });
+			}
+			
+			function logout() {
+				FB.logout(function(response) {
+				  // user is now logged out
+				});
 			}
 		  // Load the SDK asynchronously
 		  (function(d, s, id){
@@ -83,25 +90,33 @@
                     <a class="brand" href="#">RiskRank</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#rankings">Rankings</a></li>
-                            <!-- List rankings for all Groups.-->
+                        	<li><a href="#about">About</a></li>
+                        	<li><a href="#helos">Helos</a></li>
+                            <li><a href="#rankings">Groups</a></li>
                             <li><a href="#players">Players</a></li>
-                            <!-- View Player profiles..-->
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups<b class="caret"></b></a>
+                            
+                        </ul>
+                        <!-- Show if logged in -->
+                        <ul class="nav pull-right">
+                        	<li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Name<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#submit">Submit Game</a></li>
+                                    <li><a href="#submit">Profile</a></li>
+                                    <li><a href="#dispute">Submit Game</a></li>
                                     <li><a href="#dispute">Dispute Game</a></li>
                                     <li class="divider"></li>
-                                    <li class="nav-header">Admin</li>
-                                    <li><a href="#newgroup">Create new Group</a></li>
-                                    <li><a href="#newplayer">Create new Player</a></li>
+                                    <li><a href="#Feedback">Feedback</a></li>
+                                    <li>
+                                    	<form class="navbar-form">
+                                    		<button type="submit" class="btn">Logout</button>
+                                    	</form>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
+                        <!-- Show if logged out. -->
                         <form class="navbar-form pull-right">
-                            <button type="submit" class="btn" onclick="FB.login()">Sign in</button>
+                            <button type="submit" class="btn">Log in</button>
                         </form>
                     </div><!--/.nav-collapse -->
                 </div>
