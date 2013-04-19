@@ -9,16 +9,20 @@ class Player(db.Model):
   INITIAL_ELO = 1500.0
   SENSATIVITY_FACTOR = 400.0
 
+  # PRIVATE INSTANCE VARIABLES
+  # eloRating for the player
+  __eloRating = db.FloatProperty(default=INITIAL_ELO)
+  # List of keys for all the games a player has played in
+  __gameKeys = db.ListProperty(item_type=db.Key,default=[])
+
+  # PUBLIC INSTANCE VARIABLES
   # Reference to the account of player
   account = db.ReferenceProperty(required=True, collection_name='__account_player_set')
   # Reference to the pool the player is in
   pool = db.ReferenceProperty(required=True)
-  # eloRating for the player
-  __eloRating = db.FloatProperty(default=INITIAL_ELO)
   # username used to identify the player
   username = db.StringProperty(required=True)
-  # List of keys for all the games a player has played in
-  __gameKeys = db.ListProperty(item_type=db.Key,default=[])
+  
 
   @classmethod
   def createPlayer(cls, account, username, pool):
@@ -162,11 +166,14 @@ class Pool(db.Model):
 class Game(db.Model):
   """A game representing the results of a risk game"""
 
-  # K_FACTOR could become elo dependent eventually
+  # CONSTANTS
   K_FACTOR = 32
 
-  #List of keys for all the teams in the game
-  teamKeys = db.ListProperty(item_type=db.Key,default=[])
+  # PRIVATE INSTANCE VARIABLES
+  # List of keys for all the teams in the game
+  __teamKeys = db.ListProperty(item_type=db.Key,default=[])
+
+  # PUBLIC INSTANCE VARIABLES
   date = db.DateTimeProperty(auto_now_add=True)
 
   @classmethod
@@ -177,7 +184,7 @@ class Game(db.Model):
     for team in teams:
       key = team.key()
       teamKeyList.append(key)
-    game = cls(teamKeys=teamKeyList)
+    game = cls(__teamKeys=teamKeyList)
     game.put()
     for team in teams:
       team.addGame(game)
@@ -219,13 +226,29 @@ class Game(db.Model):
   def getTeams(self):
     """ Gets all the player objects for a Game."""
     teamList = []
-    for key in self.teamKeys:
+    for key in self.__teamKeys:
       team = db.get(key)
       teamList.append(team)
     return teamList
 
 class Account(db.Model):
   """ Represents an account.  One account can have many players in different pools."""
+
+  # PRIVATE INSTANCE VARIABLES
+  __playerKeys = db.ListProperty(item_type=db.Key,default=[])
+
+  # PUBLIC INSTANCE VARIABLES
   facebookID = db.StringProperty()
   firstName = db.StringProperty()
   lastName = db.StringProperty()
+
+  def addPlayer(self,player):
+    self.__playerKeys.append(player.key())
+    self.put()
+
+  def getPlayers(self):
+    playerList = []
+    for key in self.__playerKeys:
+      player = db.get(key)
+      playerList.append(player)
+    return playerList
