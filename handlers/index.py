@@ -11,15 +11,13 @@ class IndexHandler(webapp2.RequestHandler):
     codyAccount.put()
     pool = Pool()
     pool.put()
-    kyle = Player(username="Kyle Vermeer", account=kyleAccount, parent=kyleAccount, pool=pool)
-    cody = Player(username="Cody Sam", account=codyAccount, parent=codyAccount, pool=pool)
-    kyleKey = kyle.put()
-    codyKey = cody.put()
+    kyle = Player.createPlayer(username="Kyle Vermeer", account=kyleAccount, pool=pool)
+    cody = Player.createPlayer(username="Cody Sam", account=codyAccount, pool=pool)
 
     kyleTeam = Team.createTeamWithPlayers([kyle], description="Kyle")
     codyTeam = Team.createTeamWithPlayers([cody], description="Cody")
 
     firstGame = Game.createGameWithTeams([kyleTeam,codyTeam])
-    firstGame.calculateNewELOs()
+    firstGame.updateRatings()
     template = jinja_environment.get_template('index.html')
     self.response.out.write(template.render({}))
