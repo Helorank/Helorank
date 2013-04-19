@@ -1,206 +1,24 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
 
-        <link rel="stylesheet" href="static/css/bootstrap.css">
-        <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
-        <link rel="stylesheet" href="static/css/bootstrap-responsive.css">
-        <link rel="stylesheet" href="static/css/main.css">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-    	<div id="fb-root"></div>
-		<script>
-		  window.fbAsyncInit = function() {
-		    // init the FB JS SDK
-		    FB.init({
-		      appId      : '187156478098070',                        // App ID from the app dashboard
-		      channelUrl : 'helorank.appspot.com/views/channel.html', // Channel file for x-domain comms
-		      status     : true                                 // Check Facebook Login status
-		      xfbml      : true                                  // Look for social plugins on the page
-		    });
-		
-		    // Additional initialization code such as adding Event Listeners goes here
-		    FB.getLoginStatus(function(response) {
-			  if (response.status === 'connected') {
-			    // connected
-			  } else if (response.status === 'not_authorized') {
-			    // not_authorized
-			    login();
-			  } else {
-			    // not_logged_in
-			    login();
-			  }
-			});
-		  };
-		  
-		  	// Additional FB code
-			function login() {
-			    FB.login(function(response) {
-			        if (response.authResponse) {
-			            // success
-			        } else {
-			            // cancelled
-			        }
-			    });
-			}
-			
-			function logout() {
-				FB.logout(function(response) {
-				  // user is now logged out
-				});
-			}
-		  // Load the SDK asynchronously
-		  (function(d, s, id){
-		     var js, fjs = d.getElementsByTagName(s)[0];
-		     if (d.getElementById(id)) {return;}
-		     js = d.createElement(s); js.id = id;
-		     js.src = "//connect.facebook.net/en_US/all.js";
-		     fjs.parentNode.insertBefore(js, fjs);
-		   }(document, 'script', 'facebook-jssdk'));
-		</script>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+		<title>Helorank</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Cody Sam" />
 
-        <!-- This code is based on HTML5 Boilerplate Bootstrap -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">Helorank</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                        	<li><a href="#about">About</a></li>
-                        	<li><a href="#helos">Helos</a></li>
-                            <li><a href="#rankings">Groups</a></li>
-                            <li><a href="#players">Players</a></li>
-                            
-                        </ul>
-                        <!-- Show if logged in -->
-                        <ul class="nav pull-right">
-                        	<li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Name<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#submit">Profile</a></li>
-                                    <li><a href="#dispute">Submit Game</a></li>
-                                    <li><a href="#dispute">Dispute Game</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#Feedback">Feedback</a></li>
-                                    <li>
-                                    	<form class="navbar-form">
-                                    		<button type="submit" class="btn">Logout</button>
-                                    	</form>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- Show if logged out. -->
-                        <form class="navbar-form pull-right">
-                            <button type="submit" class="btn">Log in</button>
-                        </form>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
-        
-        	<div id="myCarousel" class="carousel slide">
-		      <div class="carousel-inner">
-		        <div class="item active">
-		          <img src="static/img/placeholder.jpg" alt="">
-		          <div class="container">
-		            <div class="carousel-caption">
-		              <h1>Welcome to Helorank</h1>
-		              <p class="lead">Tell us what you play. Tell us who wins.</p>
-		              <p class="lead">We'll set the record straight.</p>
-		              <a class="btn btn-large btn-primary" href="#about">Learn more</a>
-		            </div>
-		          </div>
-		        </div>
-		        <div class="item">
-		          <img src="static/img/placeholder.jpg" alt="">
-		          <div class="container">
-		            <div class="carousel-caption">
-		              <h1>Kyle uses Helorank</h1>
-		              <p class="lead">to <strong>settle</strong> the schoolyard.</p>
-		              <a class="btn btn-large btn-primary" href="#story1">See Story</a>
-		            </div>
-		          </div>
-		        </div>
-		        <div class="item">
-		          <img src="static/img/placeholder.jpg" alt="">
-		          <div class="container">
-		            <div class="carousel-caption">
-		              <h1>Cody uses Helorank</h1>
-		              <p class="lead">to <strong>savor</strong> his victories.</p>
-		              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-		            </div>
-		          </div>
-		        </div>
-		        <div class="item">
-		          <img src="static/img/placeholder.jpg" alt="">
-		          <div class="container">
-		            <div class="carousel-caption">
-		              <h1>Rachel uses Helorank</h1>
-		              <p class="lead">to <strong>silence</strong> her boss.</p>
-		              <a class="btn btn-large btn-primary" href="#story1">See Story</a>
-		            </div>
-		          </div>
-		        </div>
-		        <div class="item">
-		          <img src="static/img/placeholder.jpg" alt="">
-		          <div class="container">
-		            <div class="carousel-caption">
-		              <h1>John uses Helorank</h1>
-		              <p class="lead">to <strong>help</strong> dad remember.</p>
-		              <a class="btn btn-large btn-primary" href="#story1">See Story</a>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-		      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-		    </div><!-- /.carousel -->
-		<div class="container">
-            <hr>
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	</head>
 
-            <footer>
-                <p>&copy; Kyle Vermeer &amp; Cody Sam 2013</p>
-            </footer>
-
-        </div> <!-- /container -->
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-        <script src="/static/js/vendor/bootstrap.min.js"></script>
-
-        <script src="/static/js/main.js"></script>
-
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+	<body>
+		This site is under construction.
+	</body>
 </html>
