@@ -19,8 +19,6 @@ handlers:
   static_files: static/img/\1
   upload: static/img/(.*)
   
-- url: /static/HelorankWelcome.hyperesources
-  static_dir: static/HelorankWelcome.hyperesources
 
 - url: .*
   script: main.app
