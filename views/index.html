@@ -71,7 +71,17 @@
         </div>
 
         <div class="container">
-
+        	
+        	<!-- Quick look -->
+        		<div id="containingElement">
+        			<div id="scalecontainer">
+		        	<div id="welcome_container" style="position:relative;overflow:hidden;width:1170px;height:200px;">
+						<script type="text/javascript" charset="utf-8" src="/static/hype/welcome.hyperesources/welcome_hype_generated_script.js?90553"></script>
+					</div>
+					</div>
+				</div>
+		</div>
+		<div class="container">
             <!-- Story carousel -->
             <div id="Carousel" class="carousel slide">
 				<ol class="carousel-indicators">
@@ -80,12 +90,11 @@
 				    <li data-target="#Carousel" data-slide-to="2"></li>
 				    <li data-target="#Carousel" data-slide-to="3"></li>
 				</ol>
-			  <!-- Carousel items -->
 			  <div class="carousel-inner">
 				  <div class="item active">
 				  	<img src="static/img/index-carousel/carousel1.jpg" alt="Derrick Rose">
 				  	<div class="carousel-caption">
-				  		<h4>Helorank to settle the court.</h4>
+				  		<h4>Helorank to settle the score.</h4>
 				  	</div>
 				  </div>
 				  <div class="item">
@@ -151,6 +160,52 @@
 			  })
 			});
 		</script>
+		
+		<!-- Scale hype -->
+		<script type="text/javascript">
+	    var alsoenlarge = true;
+	    $(function(){
+	      if(isScalePossible()){
+	        $('body').css({overflow:'visible'});  // Changed from hidden to visible
+	        $('#scalecontainer').css({position: 'absolute', margin: 0});  
+	   		
+			// Run scale function on start
+	        scaleSite();
+	        scaleSite();  
+	        
+	        // Run scale function on browser resize
+	        $(window).resize(scaleSite);
+	      }
+	    });
+	    function scaleSite()
+	    {
+	      containerw = $("#containingElement").width();
+	      containerh = $("#containingElement").height();
+	      sitew = $('#scalecontainer').width();
+	      siteh = $('#scalecontainer').height();
+	      f = containerw/sitew;
+	      f = containerh/siteh<f?containerh/siteh:f;
+	      if(!alsoenlarge && f>1) f = 1;
+	      $('#scalecontainer').css({
+	        "-moz-transform"    : "scale("+f+")",
+	        "-webkit-transform" : "scale("+f+")",
+	        "-ms-transform"     : "scale("+f+")",
+	        "-o-transform"      : "scale("+f+")",
+	        "transform"         : "scale("+f+")",
+	        "center"              : ((containerw-(sitew*f))/2)+"px",
+	      });
+	    }
+	    function isScalePossible()
+	    {
+	      can = 'MozTransform' in document.body.style;
+	      if(!can) can = 'webkitTransform' in document.body.style;
+	      if(!can) can = 'msTransform' in document.body.style;
+	      if(!can) can = 'OTransform' in document.body.style;
+	      if(!can) can = 'transform' in document.body.style;
+	      if(!can) can = 'Transform' in document.body.style;
+	      return can;
+	    }
+	    </script>
         
         <!-- Google Analytics -->
         <script>

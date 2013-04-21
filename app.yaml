@@ -19,6 +19,8 @@ handlers:
   static_files: static/img/\1
   upload: static/img/(.*)
   
+- url: /static/hype
+  static_dir: static/hype
 
 - url: .*
   script: main.app

@@ -140,9 +140,9 @@ body {
 
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  -webkit-border-radius: 6px 6px 6px 6px;
+  /*-webkit-border-radius: 6px 6px 6px 6px;
      -moz-border-radius: 6px 6px 6px 6px;
-          border-radius: 6px 6px 6px 6px;
+          border-radius: 6px 6px 6px 6px;*/
 }
 
 .carousel-caption {
@@ -159,15 +159,12 @@ body {
   text-shadow: 2px 2px 0 #000000;
 }
 
-.logo {
-	
-}
-
 /* Large desktop */
 @media (min-width: 1200px) {
 	.carousel-caption h4 {
 	  font-size:450%;
 	}
+	
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -182,6 +179,49 @@ body {
 	.carousel-caption h4 {
 	  font-size:300%;
 	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.carousel-caption h4 {
+	  font-size:175%;
+	}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.carousel-caption h4 {
+	  font-size:150%;
+	}
+}
+#scalecontainer {
+    -moz-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+    width: 1169px;
+    margin: 0 auto;
+    padding:0;
+    
+}
+  
+#containingElement {
+  	width:100%;
+  	height:200px;
+  	background-color: inherit;
+  	padding:0;
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 980px) and (max-width: 1199px) {
+	{#containingElement {height:124px;}}
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	
 }
  
 /* Landscape phone to portrait tablet */
