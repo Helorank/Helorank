@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Helorank</title>
-        <meta name="description" content="Rank casual competition among friends with Helorank.">
+        <meta name="description" content="Track every game you play. Create power rankings among your friends.">
         <meta name="viewport" content="width=device-width">
         
         <!-- Add Montserrat from Google Fonts library -->
@@ -70,18 +70,18 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container margin">
         	
         	<!-- Quick look -->
         		<div id="containingElement">
         			<div id="scalecontainer">
-		        	<div id="welcome_container" style="position:relative;overflow:hidden;width:1170px;height:200px;">
-						<script type="text/javascript" charset="utf-8" src="/static/hype/welcome.hyperesources/welcome_hype_generated_script.js?90553"></script>
+		        	<div id="welcome_hype_container" style="position:relative;overflow:hidden;width:1170px;height:200px;">
+						<script type="text/javascript" charset="utf-8" src="static/hype/welcome.hyperesources/welcome_hype_generated_script.js?6682"></script>
 					</div>
 					</div>
 				</div>
 		</div>
-		<div class="container">
+		<div class="container margin">
             <!-- Story carousel -->
             <div id="Carousel" class="carousel slide">
 				<ol class="carousel-indicators">
@@ -152,16 +152,16 @@
         <script src="/static/js/vendor/bootstrap.min.js"></script>
         <script src="/static/js/main.js"></script>
         
-        <!-- Carousel js -->
+        <!-- Cycle carousel -->
         <script type="text/javascript">
 		    $(document).ready(function() {
 			  $('.carousel').carousel({
-			      interval: 4000,
+			      interval: 6000,
 			  })
 			});
 		</script>
 		
-		<!-- Scale hype -->
+		<!-- Scale welcome -->
 		<script type="text/javascript">
 	    var alsoenlarge = true;
 	    $(function(){
@@ -177,43 +177,23 @@
 	        $(window).resize(scaleSite);
 	      }
 	    });
-	    function scaleSite()
-	    {
-	      containerw = $("#containingElement").width();
-	      containerh = $("#containingElement").height();
-	      sitew = $('#scalecontainer').width();
-	      siteh = $('#scalecontainer').height();
-	      f = containerw/sitew;
-	      f = containerh/siteh<f?containerh/siteh:f;
-	      if(!alsoenlarge && f>1) f = 1;
-	      $('#scalecontainer').css({
-	        "-moz-transform"    : "scale("+f+")",
-	        "-webkit-transform" : "scale("+f+")",
-	        "-ms-transform"     : "scale("+f+")",
-	        "-o-transform"      : "scale("+f+")",
-	        "transform"         : "scale("+f+")",
-	        "center"              : ((containerw-(sitew*f))/2)+"px",
-	      });
-	    }
-	    function isScalePossible()
-	    {
-	      can = 'MozTransform' in document.body.style;
-	      if(!can) can = 'webkitTransform' in document.body.style;
-	      if(!can) can = 'msTransform' in document.body.style;
-	      if(!can) can = 'OTransform' in document.body.style;
-	      if(!can) can = 'transform' in document.body.style;
-	      if(!can) can = 'Transform' in document.body.style;
-	      return can;
-	    }
 	    </script>
         
         <!-- Google Analytics -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-40326300-1']);
+		  _gaq.push(['_setDomainName', 'helorank.appspot.com']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
         
     </body>
 </html>

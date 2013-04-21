@@ -1,10 +1,10 @@
-//	HYPE.documents["Welcome"]
+//	HYPE.documents["welcome"]
 
 (function HYPE_DocumentLoader() {
-	var resourcesFolderName = "welcome.hyperesources";
-	var documentName = "Welcome";
+	var resourcesFolderName = "static/hype/welcome.hyperesources";
+	var documentName = "welcome";
 	var documentLoaderFilename = "welcome_hype_generated_script.js";
-	var mainContainerID = "welcome_container";
+	var mainContainerID = "welcome_hype_container";
 
 	// find the URL for this script's absolute path and set as the resourceFolderName
 	try {
@@ -75,7 +75,7 @@
 	
 	var resources = {"0":{n:"frame0.png",p:1},"1":{n:"frame3.png",p:1},"2":{n:"frame4.png",p:1}};
 	
-	var scenes = [{x:0,p:"600px",c:"#FFFFFF",v:{"3":{o:"content-box",h:"1",x:"visible",a:0,q:"100% 100%",b:0,j:"absolute",r:"inline",c:1170,k:"div",z:"2",d:200,e:"0.000000"},"6":{aV:8,w:"<p style=\"font-family: 'Montserrat', sans-serif;\">Track every game you play.</p>",a:495,x:"visible",Z:"break-word",y:"preserve",j:"absolute",r:"inline",z:"5",k:"div",b:52,aT:8,aS:8,t:28,e:"0.000000",aU:8,G:"#999999"},"4":{o:"content-box",h:"2",x:"visible",a:0,q:"100% 100%",b:0,j:"absolute",r:"inline",c:1170,k:"div",z:"3",d:200,e:"0.000000"},"2":{o:"content-box",w:"",h:"0",x:"visible",a:0,q:"100% 100%",b:0,j:"absolute",r:"inline",c:1170,k:"div",z:"1",d:200,t:15},"7":{aV:8,w:"<p style=\"font-family: 'Montserrat', sans-serif;\">Create power rankings among your friends.</p>",a:495,x:"visible",Z:"break-word",y:"preserve",j:"absolute",r:"inline",z:"4",k:"div",b:89,aT:8,aS:8,t:28,e:"0.000000",aU:8,G:"#999999"},"5":{aV:8,w:"<p style=\"font-family: 'Montserrat', sans-serif;\">Welcome to Helorank</p>",a:483,x:"visible",Z:"break-word",y:"preserve",j:"absolute",r:"inline",c:591,k:"div",z:"6",aT:8,d:116,t:54,e:"0.000000",b:-43,aU:8,G:"#99CC99",aS:8}},n:"Untitled Scene",T:{kTimelineDefaultIdentifier:{d:5.03,i:"kTimelineDefaultIdentifier",n:"Main Timeline",a:[{f:"2",t:0,d:0.15,i:"e",e:"0.806900",s:"0.000000",o:"3"},{f:"2",t:0.15,d:0.15,i:"e",e:"0.000000",s:"0.806900",o:"3"},{f:"2",t:1,d:0.15,i:"e",e:"0.798760",s:"0.000000",o:"3"},{f:"2",t:1.15,d:0.15,i:"e",e:"0.000000",s:"0.798760",o:"3"},{f:"2",t:2,d:1,i:"e",e:"1.000000",s:"0.000000",o:"4"},{f:"2",t:3,d:0.21,i:"a",e:519,s:483,o:"5"},{f:"2",t:3,d:0.21,i:"e",e:"1.000000",s:"0.000000",o:"5"},{f:"2",t:3.21,d:0.21,i:"a",e:531,s:495,o:"6"},{f:"2",t:3.21,d:0.21,i:"e",e:"1.000000",s:"0.000000",o:"6"},{f:"2",t:4.12,d:0.21,i:"e",e:"1.000000",s:"0.000000",o:"7"},{f:"2",t:4.12,d:0.21,i:"a",e:531,s:495,o:"7"}],f:30}},o:"1"}];
+	var scenes = [{x:0,p:"600px",c:"#333333",v:{"3":{o:"content-box",h:"1",aI:0,x:"visible",q:"100% 100%",a:0,j:"absolute",r:"inline",c:1170,k:"div",z:"2",d:200,b:0,aK:0,e:"0.000000",aJ:0,aL:0},"6":{aV:8,w:"<p style=\"font-family: 'Montserrat', sans-serif;\">Track every game you play.</p>",a:495,x:"visible",Z:"break-word",y:"preserve",j:"absolute",r:"inline",z:"5",k:"div",b:52,aT:8,aS:8,t:28,e:"0.000000",aU:8,G:"#999999"},"4":{o:"content-box",h:"2",aI:0,x:"visible",q:"100% 100%",a:0,j:"absolute",r:"inline",c:1170,k:"div",z:"3",d:200,b:0,aK:0,e:"0.000000",aJ:0,aL:0},"2":{o:"content-box",w:"",h:"0",aI:0,x:"visible",q:"100% 100%",a:0,j:"absolute",r:"inline",c:1170,k:"div",z:"1",d:200,b:0,t:15,aK:0,aJ:0,aL:0},"7":{aV:8,w:"<p style=\"font-family: 'Montserrat', sans-serif;\">Create power rankings among your friends.</p>",a:495,x:"visible",Z:"break-word",y:"preserve",j:"absolute",r:"inline",z:"4",k:"div",b:89,aT:8,aS:8,t:28,e:"0.000000",aU:8,G:"#999999"},"5":{aV:8,w:"<p style=\"font-family: 'Montserrat', sans-serif;\">Welcome to Helorank</p>",a:483,x:"visible",Z:"break-word",y:"preserve",j:"absolute",r:"inline",c:623,k:"div",z:"6",aT:8,d:116,t:52,e:"0.000000",b:-32,aU:8,G:"#99CC99",aS:8}},n:"Untitled Scene",T:{kTimelineDefaultIdentifier:{d:5.03,i:"kTimelineDefaultIdentifier",n:"Main Timeline",a:[{f:"2",t:0,d:0.15,i:"e",e:"0.806900",s:"0.000000",o:"3"},{f:"2",t:0.15,d:0.15,i:"e",e:"0.000000",s:"0.806900",o:"3"},{f:"2",t:1,d:0.15,i:"e",e:"0.798760",s:"0.000000",o:"3"},{f:"2",t:1.15,d:0.15,i:"e",e:"0.000000",s:"0.798760",o:"3"},{f:"2",t:2,d:1,i:"e",e:"1.000000",s:"0.000000",o:"4"},{f:"2",t:3,d:0.21,i:"a",e:519,s:483,o:"5"},{f:"2",t:3,d:0.21,i:"e",e:"1.000000",s:"0.000000",o:"5"},{f:"2",t:3.21,d:0.21,i:"a",e:531,s:495,o:"6"},{f:"2",t:3.21,d:0.21,i:"e",e:"1.000000",s:"0.000000",o:"6"},{f:"2",t:4.12,d:0.21,i:"e",e:"1.000000",s:"0.000000",o:"7"},{f:"2",t:4.12,d:0.21,i:"a",e:531,s:495,o:"7"}],f:30}},o:"1"}];
 	
 	var javascripts = [];
 	
