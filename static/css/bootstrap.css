@@ -231,14 +231,8 @@ body {
 }
 
 a {
-  color: #0088cc;
+  /* Removed color */
   text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: #005580;
-  text-decoration: underline;
 }
 
 .img-rounded {
@@ -653,10 +647,7 @@ p {
 }
 
 .lead {
-  margin-bottom: 20px;
-  font-size: 21px;
-  font-weight: 200;
-  line-height: 30px;
+  /*Remove*/
 }
 
 small {
@@ -3928,7 +3919,7 @@ input[type="submit"].btn.btn-mini {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  /* Remove */
 }
 
 .nav > li > a > img {

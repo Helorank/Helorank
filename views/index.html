@@ -70,18 +70,18 @@
             </div>
         </div>
 
-        <div class="container margin">
+        <div class="container scale">
         	
         	<!-- Quick look -->
-        		<div id="containingElement">
-        			<div id="scalecontainer">
-		        	<div id="welcome_hype_container" style="position:relative;overflow:hidden;width:1170px;height:200px;">
-						<script type="text/javascript" charset="utf-8" src="static/hype/welcome.hyperesources/welcome_hype_generated_script.js?6682"></script>
-					</div>
-					</div>
-				</div>
+		<div id="containingElement">
+			<div id="scalecontainer">
+        	<div id="welcome_hype_container" style="position:relative;overflow:hidden;width:1170px;height:200px;">
+				<script type="text/javascript" charset="utf-8" src="static/hype/welcome.hyperesources/welcome_hype_generated_script.js?6682"></script>
+			</div>
+			</div>
 		</div>
-		<div class="container margin">
+		</div>
+		<div class="container">
             <!-- Story carousel -->
             <div id="Carousel" class="carousel slide">
 				<ol class="carousel-indicators">
@@ -117,42 +117,60 @@
 				  </div>
 			  </div>
 			</div>
-					
-            <!-- Example row of columns -->
-            <!--
-            <div class="row">
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-               </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
+			
+			<div class="container about">
+			<div class="featurette pad">
+		        <h2 class="featurette-heading helogreen">About Helorank</h2>
+		        <p class="lead">From a one-on-one FIFA bet to a 64-person basketball bracket, Helorank ranks your reality. Tell us what you play. Tell us who wins. We'll evaluate the games and create power rankings for you and your friends. Did you just defeat the best golfer in your dorm? Helorank knows. Do you only win easy tennis matches? Helorank knows. Don't rely on storytelling alone to remember your last game with friends. We know you're more competitive than that. Track it. Quantify it. Helorank it.
+		        </p>
+		     </div>
             </div>
-            <hr>
-			-->
-            <footer>
-                <p>&copy; Kyle &amp; Cody 2013</p>
-            </footer>
-
-        </div> <!-- /container -->
+         </div>   
         
-        <!-- Javascript -->
+        <footer class="foot">
+        	<div class="container foot pad">
+        	<div class="row">
+        		<div class="span6">
+        			<img src="static/img/footer/signature-280x112.png" alt="Drew Brees">
+        			<h5 class="helogreen designed">Designed by Kyle &amp; Cody</h5>
+        		</div>
+        		<div class="span2 smallhide">
+        			<h5 class="helogreen">MENU</h5>
+        			<ul class="nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Helos</a></li>
+                        <li><a href="#contact">Groups</a></li>
+                        <li><a href="#contact">Games</a></li>
+                        <li><a href="#contact">Players</a></li>
+                	</ul>
+        		</div>
+        		<div class="span2">
+        			<h5 class="helogreen">SOCIAL</h5>
+        			<ul class="nav">
+                        <li><a href="#about">Facebook</a></li>
+                        <li><a href="#contact">Twitter</a></li>
+                        <li><a href="#contact">Blog</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                	</ul>
+        		</div>
+        		<div class="span2">
+    				<h5 class="helogreen">ETC</h5>
+	    			<ul class="nav">
+	                        <li><a href="#about">Press</a></li>
+	                        <li><a href="#contact">Privacy</a></li>
+	                        <li><a href="#contact">Terms</a></li>
+	                </ul>
+        		</div>
+        	</div>
+        	</div>
+        </footer>
+     
         <script src="/static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="/static/js/vendor/bootstrap.min.js"></script>
         <script src="/static/js/main.js"></script>
         
-        <!-- Cycle carousel -->
         <script type="text/javascript">
 		    $(document).ready(function() {
 			  $('.carousel').carousel({
@@ -161,27 +179,20 @@
 			});
 		</script>
 		
-		<!-- Scale welcome -->
 		<script type="text/javascript">
 	    var alsoenlarge = true;
 	    $(function(){
 	      if(isScalePossible()){
-	        $('body').css({overflow:'visible'});  // Changed from hidden to visible
+	        $('body').css({overflow:'visible'});
 	        $('#scalecontainer').css({position: 'absolute', margin: 0});  
-	   		
-			// Run scale function on start
 	        scaleSite();
 	        scaleSite();  
-	        
-	        // Run scale function on browser resize
 	        $(window).resize(scaleSite);
 	      }
 	    });
 	    </script>
         
-        <!-- Google Analytics -->
         <script type="text/javascript">
-
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-40326300-1']);
 		  _gaq.push(['_setDomainName', 'helorank.appspot.com']);
@@ -191,9 +202,7 @@
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		
-		</script>
-        
+		  })();		
+		</script>  
     </body>
 </html>

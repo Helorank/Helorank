@@ -6,8 +6,7 @@
  */
 
 body {
-  padding-top: 60px;
-  padding-bottom: 40px;
+
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   color: #999999;
   background-image:url('../img/background.png');
@@ -175,51 +174,116 @@ body {
   	width:100%;
   	background-color: inherit;
   	padding:0;
+  	margin-top: 0;
+}
+
+.container .about {
+	background-color:#ffffff;
+}
+
+.pad {
+	padding: 2% 4%;
+}
+.rightpad {
+	padding: 0 4% 0 0;
+}
+
+.lead {
+  margin-bottom: 20;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+.helogreen {
+	color: #99cc99;
+	font-weight: normal;
+}
+
+.foot {
+	background-color: #ffffff;
+	margin-top: 20px;
+	width: 100%
+	position: fixed;
+}
+
+a {
+  color: #b8becf;
+}
+
+a:hover,
+a:focus {
+  color: #333333;
+}
+
+.designed {
+	padding-left: 20px
 }
 
 @media (min-width: 1200px) {
 	.carousel-caption h4 {
 	  font-size:450%;
 	}
+	.scale {
+		margin-top:60px;
+	}
+	.scale,
 	#containingElement {
 		height:200px;
+		display: block !important;
 	}
 	.carousel {
     	margin-top:20px;
     }
-	
+    .smallhide {
+		display: block !important;
+	}
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
 	.carousel-caption h4 {
 	  font-size:350%;
 	}
+	.scale {
+		margin-top:60px;
+	}
+	.scale,
 	#containingElement {
 		height:161px;
+		display: block !important;
 	}
 	.carousel {
     	margin-top:20px;
     }
+    .smallhide {
+		display: block !important;
+	}
 }
  
 @media (min-width: 768px) and (max-width: 979px) {
 	.carousel-caption h4 {
 	  font-size:300%;
 	}
+	.scale,
 	#containingElement {
 		height:124px;
+		display: block !important;
 	}
 	.carousel {
     	margin-top:20px;
-    }
+   }
+   .smallhide {
+		display: block !important;
+	}
 }
  
 @media (max-width: 767px) {
 	.carousel-caption h4 {
 	  font-size:175%;
 	}
-	#containingElement {
-		height:0px;
+	.smallhide,
+	.scale {
+		display: none !important;
 	}
 }
 
@@ -227,7 +291,8 @@ body {
 	.carousel-caption h4 {
 	  font-size:150%;
 	}
-	#containingElement {
-		height:0px;
+	.smallhide,
+	.scale {
+		display: none !important;
 	}
 }
