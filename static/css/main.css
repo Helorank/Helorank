@@ -128,3 +128,34 @@ body {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
+
+.carousel {
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  -webkit-border-radius: 6px 6px 6px 6px;
+     -moz-border-radius: 6px 6px 6px 6px;
+          border-radius: 6px 6px 6px 6px;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 80%;
+  left: 0;
+  padding: 0px;
+}
+
+.carousel-caption h4 {
+  font-size:450%;
+  font-weight: normal;
+  margin: 5% 2% 0px;
+  text-shadow: 2px 2px 0 #000000;
+}

@@ -2282,7 +2282,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../static/img/glyphicons-halflings.png");
+  background-image: url("/static/img/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -2307,7 +2307,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("../static/img/glyphicons-halflings.png");
+  background-image: url("/static/img/glyphicons-halflings.png");
 }
 
 .icon-glass {
@@ -6028,13 +6028,8 @@ a.badge:focus {
 }
 
 .carousel-caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 15px;
-  background: #333333;
-  background: rgba(0, 0, 0, 0.75);
+  /* Removed */
+  /* Remove background */
 }
 
 .carousel-caption h4,
