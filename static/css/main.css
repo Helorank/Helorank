@@ -243,6 +243,9 @@ a:focus {
     .smallhide {
 		display: block !important;
 	}
+	.gen-margin {
+		margin-top: 60px;
+	}
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -262,6 +265,9 @@ a:focus {
     }
     .smallhide {
 		display: block !important;
+	}
+	.gen-margin {
+		margin-top: 60px;
 	}
 }
  
