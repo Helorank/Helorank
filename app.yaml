@@ -22,6 +22,9 @@ handlers:
 - url: /static/hype
   static_dir: static/hype
 
+- url: /static/misc
+  static_dir: statics/misc
+
 - url: .*
   script: main.app
 

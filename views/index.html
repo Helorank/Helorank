@@ -26,18 +26,46 @@
         <div id="fb-root"></div>
 			<script>
 			  // Additional JS functions here
+				function login() {
+					console.log("ello!");
+			    	FB.login(function(response) {
+					    if (response.authResponse) {
+					        testAPI();
+					    } else {
+					         console.log("Facebook login Cancelled");
+					    }
+					});
+			   	}
+
+			   	function testAPI() {
+				    console.log('Welcome!  Fetching your information.... ');
+				    FB.api('/me', function(response) {
+				        console.log('Good to see you, ' + response.name + '.');
+				    });
+				}
+
+
 			  window.fbAsyncInit = function() {
 			    FB.init({
 			      appId      : '187156478098070', // App ID
-			      channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+			      channelUrl : 'http://helorank.appspot.com/static/misc/channel.html', // Channel File
 			      status     : true, // check login status
 			      cookie     : true, // enable cookies to allow the server to access the session
 			      xfbml      : true  // parse XFBML
 			    });
 
-			    // Additional init code here
-
+			    FB.getLoginStatus(function(response) {
+			  		if (response.status === 'connected') {
+			    		console.log("Connected");
+			  		} else if (response.status === 'not_authorized') {
+			  			console.log("Not Authorized");
+			  		} else {
+			    		console.log("Not Logged In");
+			  		}
+			 	});
 			  };
+
+			  
 
 			  // Load the SDK Asynchronously
 			  (function(d){
@@ -85,7 +113,7 @@
                             </li>
                         <li>
                         	<form class="navbar-form">
-	                            <button type="submit" class="btn">Sign in</button>
+	                            <button type="button" class="btn" id="loginButton">Sign in</button>
 	                        </form>
                         </li>
                         </ul>
@@ -200,6 +228,10 @@
 		    $(document).ready(function() {
 			  $('.carousel').carousel({
 			      interval: 6000,
+			  })
+
+			  $('#loginButton').click(function() {
+			  	login();
 			  })
 			});
 		</script>
