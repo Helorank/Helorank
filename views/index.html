@@ -196,9 +196,11 @@
         
         <script type="text/javascript">
 		    $(document).ready(function() {
-			  $('.carousel').carousel({
+			  setTimeout( function() {
+			  	$('.carousel').carousel({
 			      interval: 6000,
-			  })
+			  	});
+			  },2000);
 			});
 		</script>
 		
