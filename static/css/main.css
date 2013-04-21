@@ -188,6 +188,15 @@ body {
 	padding: 0 4% 0 0;
 }
 
+.minipad {
+	padding: 0 0 0 0;
+}
+
+.hrdown {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
 .lead {
   margin-bottom: 20;
   font-size: 18px;
@@ -214,10 +223,6 @@ a {
 a:hover,
 a:focus {
   color: #333333;
-}
-
-.designed {
-	padding-left: 20px
 }
 
 @media (min-width: 1200px) {
