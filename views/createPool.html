@@ -41,9 +41,9 @@
                             <li><a href="Players">Players</a></li>
                         </ul>
                         <ul class="nav pull-right">
-                        <li class="dropdown">
+                        <li class="dropdown" id="accountmenu">
                         	<!-- Account menu only displayed when user is signed in -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             	<li><a href="Profile">Profile</a></li>
                                 <li><a href="SubmitGame">Submit Game</a></li>
@@ -55,9 +55,10 @@
                                 <li><a href="#logout">Log out</a></li>
                             </ul>
                             </li>
+                            <li><a href="SignUp">Sign up</a></li>
                         <li>
                         	<form class="navbar-form">
-	                            <button type="submit" class="btn">Sign in</button>
+	                            <button type="submit" class="btn">Log in</button>
 	                        </form>
                         </li>
                         </ul>
@@ -72,24 +73,24 @@
 			<div class="featurette pad">
 		        <h2 class="featurette-heading helogreen">Create Pool</h2>
 		        <hr>
-		        <p class="lead">Rank your friends in any game. Give your Pool a name to begin.</p>
+		        <p class="lead">A pool is a group of friends. Create a pool to begin logging games in Helorank. After you submit your first game, we'll calculate power rankings.</p>
 		        <br>
 		        <form>
 		        	<legend>Get Started</legend>
 				    
-				    <label>Name</label>
+				    <label class="darktext">Name</label>
 				    <input type="text" placeholder="Junipero 2013"><br>
 				    <br>
 				    
-				    <label>Description</label>
+				    <label class="darktext">Description</label>
 				    <input class="input-xxlarge" type="text"><br>
 				    <br>
 				    
-				    <label>What game are you playing?</label>
+				    <label class="darktext">What game are you playing?</label>
 				  	<input type="text" placeholder="Basketball"><br>
 				    <br>
 				    
-				    <label>Game Type</label>
+				    <label class="darktext">Game Type</label>
 				  	<select>
 					  <option>Sports</option>
 					  <option>Video Game</option>
@@ -100,7 +101,7 @@
 				  	<br>
 				  	<br>
 				  	
-				    <label>Pick a Helo</label>
+				    <label class="darktext">Pick a Helo</label>
 					<span class="help-block">A Helo is the engine that ranks your friends.</span>
 				    <label class="radio">
 				    <input type="radio" name="helo" value="binary">Basic (Recommended). <span class="heloblue">A win is a win. The size of the victory doesn't matter.</span><br>

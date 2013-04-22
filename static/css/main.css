@@ -22,25 +22,21 @@ body {
   background-color: #ffffff;
 }
 
-.navbar .btn {
+.btn {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   color: #ffffff;
   background-color: #99cc99;
   border: 0px;
 }
 
-.navbar .btn:hover,
-.navbar .btn:focus,
-.navbar .btn:active,
-.navbar .btn.active,
-.navbar .btn.disabled,
-.navbar .btn[disabled] {
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
   color: #ffffff;
   background-color: #b8becf;
-}
-
-.btn {
-  background-color:#ffffff;
 }
 
 .navbar-inverse .nav > li > a {
@@ -213,6 +209,13 @@ body {
 	font-weight: normal;
 }
 
+.nobottom {
+	margin-bottom: 0;
+}
+
+.darktext {
+	color:#333333;
+}
 
 .foot {
 	background-color: #ffffff;

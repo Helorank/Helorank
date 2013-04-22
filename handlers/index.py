@@ -81,3 +81,18 @@ class termsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('terms.html')
         self.response.out.write(template.render({}))
+        
+class signUpHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('signUp.html')
+        self.response.out.write(template.render({}))
+        
+class logInHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('logIn.html')
+        self.response.out.write(template.render({}))
+        
+class logOutHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('logOut.html')
+        self.response.out.write(template.render({}))

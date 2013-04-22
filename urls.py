@@ -14,5 +14,8 @@ routes = [
   webapp2.Route(r'/JoinPool',handler='handlers.index.joinPoolHandler'),
   webapp2.Route(r'/Contact',handler='handlers.index.contactHandler'),
   webapp2.Route(r'/Blog',handler='handlers.index.blogHandler'),
-  webapp2.Route(r'/Terms',handler='handlers.index.termsHandler')
+  webapp2.Route(r'/Terms',handler='handlers.index.termsHandler'),
+  webapp2.Route(r'/SignUp',handler='handlers.index.signUpHandler'),
+  webapp2.Route(r'/LogIn',handler='handlers.index.logInHandler'),
+  webapp2.Route(r'/LogOut',handler='handlers.index.logOutHandler')
 ]
