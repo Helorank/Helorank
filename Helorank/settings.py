@@ -57,8 +57,12 @@ WSGI_APPLICATION = 'Helorank.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'deaensll3m9a0s',
+        'USER': 'zdudfdflhhgqbj',
+        'PASSWORD': 'E7HBOdFBXUA3cRVXpjdN3QlaAN',
+        'HOST': 'ec2-54-225-91-60.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
