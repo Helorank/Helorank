@@ -1,0 +1,59 @@
+{% extends "base/base-generic.html" %}
+{% load staticfiles %}
+
+{% block title %}Helorank | Welcome{% endblock title %}
+
+{% block nav-left %}
+  <ul class="nav">
+    <li{% block nav-active1 %}{% endblock %}><a href="#home">Home</a></li>
+    <li{% block nav-active2 %}{% endblock %}><a href="#about">About</a></li>
+    <li{% block nav-active3 %}{% endblock %}><a href="#contact">Contact</a></li>
+    <li{% block nav-active4 %}{% endblock %}><a href="#blog">Blog</a></li>
+  </ul>
+{% endblock nav-left %}
+
+{% block nav-right %}
+  <ul class="nav pull-right">
+    <li><a href="#signup">Sign up</a></li>
+    <li class="divider-vertical"></li>
+    <li>
+      <form class="navbar-form">
+        <a class="btn" href="#login">Log in</a>
+      </form>
+    </li>
+  </ul>
+{% endblock nav-right %}
+            
+{% block footer %}
+  <div class="span2">
+    <h5>MENU</h5>
+    <ul class="nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+  <div class="span2"> <!--social-->
+    <h5>SOCIAL</h5>
+    <ul class="nav">
+      <li><a href="http://facebook.com/Helorank">Facebook</a></li>
+      <li><a href="http://twitter.com/Helorank">Twitter</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </div> <!--/social-->
+  <div class="span2"> <!--etcetera-->
+    <h5>ETC</h5>
+    <ul class="nav">
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#press">Press</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#terms">Terms</a></li>
+    </ul>
+  </div> <!--/etcetera-->
+  <div class="span6 text-center"> <!--signature-->
+    <h1 class="heloblueDark largerfont">Helorank</h1>
+    <img src={% static "img/logos/logo-bold-150x38.png" %} alt="Logo Bold">
+    <h6>Designed by Kyle &amp; Cody</h6>
+  </div> <!--/signature-->
+{% endblock footer %}
+
+{% block scripts %}{{ block.super }}{% endblock scripts %}

@@ -1,0 +1,79 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{% endblock title %}
+
+{% block bodypad %}
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+  </style>
+{% endblock bodypad %}
+
+{% block login %}
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '187156478098070', // App ID
+        channelUrl : '/static/misc/channel.html', // Channel File
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+  
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          console.log("Connected");
+        } else if (response.status === 'not_authorized') {
+          console.log("Not Authorized");
+        } else {
+          console.log("Not Logged In");
+        }
+      });
+    };
+  
+    // Load the SDK Asynchronously
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       ref.parentNode.insertBefore(js, ref);
+    }(document));
+  </script>
+{% endblock login %}
+    
+{% block navbar %}
+  <div class="navbar navbar-fixed-top"> <!--.navbar-->
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#index">Helorank</a>
+        <div class="nav-collapse collapse"> <!--.nav-collapse-->
+          {% block nav-left %}{% endblock nav-left %}
+          {% block nav-right %}{% endblock nav-right %}   
+        </div> <!--/.nav-collapse -->
+      </div>
+    </div>
+  </div> <!--/.navbar -->
+{% endblock navbar %}
+
+{% block content %}{% endblock content %}
+
+{% block footer %}{% endblock footer %}
+
+{% block scripts %}
+  <script src={% static "js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" %}></script>
+  
+  <!--<script>window.jQuery || document.write('<script src={% static "/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>-->
+  <script src={% static "js/vendor/bootstrap.js" %}></script>
+  <script src={% static "js/main-postload.js" %}></script>
+  {% block page-scripts %}{% endblock page-scripts %}
+{% endblock scripts %}

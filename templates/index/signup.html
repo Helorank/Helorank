@@ -1,0 +1,53 @@
+{% extends "base-external.html" %}
+
+{% block bodypad %}
+  <style>
+    body {
+      background-color: #eeeeee;
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+  </style>
+{% endblock %}
+
+{% block title %}Helorank | Log in{% endblock %}
+
+{% block content %}
+<div class="container"> <!--content-->
+  <div class="row">
+     <div class="span6 offset3">
+       <h1>Sign up</h1>
+       <hr>
+     </div>
+  </div>
+  
+  <div class="row">
+    <div class="span3 offset6">
+      <h4>Sign up with email</h4>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="span3 offset3">
+      <form>
+        <a href="#" class="btn btn-block btn-facebook">Sign up with Facebook</a>
+      </form>
+      <form>
+        <a href="#" class="btn btn-block btn-twitter">Sign up with Twitter</a>
+      </form>
+      <p><small>Already registered? <a href="#login">Log in</a></small></p>
+      <br>
+    </div>
+    <div class="span3">
+      <form>
+        <input class="input-block-level" type="text" name="name" placeholder="Michael"  /><br>
+        <input class="input-block-level" type="text" name="username" placeholder="Email"  /><br>
+        <input class="input-block-level" type="password" name="password" placeholder="Password" /><br>       
+        <input type="submit" value="Sign up" class="btn" />
+      </form>
+    </div>
+  </div>
+</div> <!--/content-->
+{% endblock %}
+
+{% block scripts %}{% endblock %}

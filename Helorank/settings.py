@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -79,8 +80,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Templates
+
+TEMPLATE_DIRS = (
+    'templates'
+)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'http://s3-us-west-1.amazonaws.com/helorank/'
