@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, include, url
+from django.conf import settings
+from django.conf.urls.static import static
 
 from django.contrib import admin
 from Helorank.settings import DEBUG
@@ -15,3 +17,11 @@ urlpatterns = patterns('',
   url(r'^signup/', views.signup, name='signup'),
   url(r'^admin/', include(admin.site.urls)),
 )
+
+if settings.DEBUG:
+    # static files (images, css, javascript, etc.)
+    #urlpatterns += patterns('',
+    #    (r'^static/(?P<path>.*)', 'django.views.static.serve', {
+    #    'document_root': settings.STATIC_URL}
+    #))
+    urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_URL)

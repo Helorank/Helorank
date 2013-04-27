@@ -89,5 +89,14 @@ TEMPLATE_DIRS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
+if (DEBUG):
+    STATIC_URL = '/media/'
+    STATIC_ROOT = 'media'
+    STATICFILES_DIRS = (
+        'static',
+    )
+else:
+    STATIC_URL = 'http://s3-us-west-1.amazonaws.com/helorank/'
 
-STATIC_URL = 'http://s3-us-west-1.amazonaws.com/helorank/'
+
+    
