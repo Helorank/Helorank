@@ -1,9 +1,10 @@
-{% extends "base/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Helorank | Beta Testing{% endblock %}
 {% block bodypad %}
   <style>
     body {
+      background-color: #eeeeee;
       padding-top: 100px;
       padding-bottom: 40px;
     }
@@ -12,16 +13,16 @@
 
 {% block content%}
   <div class="container">
-    <hr>
-    <br>
-    <h1>Beta Sign up</h1>
-    <p class="lead">We'd love for you to test drive our app. To be a beta tester, please submit your email. We'll reach out to you as soon as we can.</p>
-    <form class="form-inline">
-      <input type="text" class="input" placeholder="contact@helorank.com">
-      <button type="submit" class="btn btn-info" id="betaEmail">Sign up</button>
-    </form>
-    <br>
-    <hr>
-    <a class="btn btn-danger" href="/home">To Home &raquo;</a>
+    <div class="span8 offset2">
+      <hr>
+      <br>
+      <h1>Beta Sign up</h1>
+      <p class="lead">We'd love for you to test drive our app. To be a beta tester, please submit your email. We'll reach out to you as soon as we can.</p>
+      <form class="form-inline">
+        <input type="text" class="input" placeholder="contact@helorank.com">
+        <button type="submit" class="btn btn-info" id="betaEmail">Sign up</button>
+      </form>
+      <a class="btn btn-danger" href="/~codysam/home.html">To Home &raquo;</a>
+    </div>
   </div>
 {% endblock %}

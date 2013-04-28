@@ -1,9 +1,10 @@
-{% extends "base/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Helorank | Under Construction{% endblock %}
 {% block bodypad %}
   <style>
     body {
+      background-color: #eeeeee;
       padding-top: 100px;
       padding-bottom: 40px;
     }
@@ -12,15 +13,14 @@
 
 {% block content%}
 	<div class="container">
-    <hr>
-    <br>
-    <h1>Helorank is under construction</h1>
-    <p class="lead">To be notified when we release Helorank, please click through below. We hope to hear from you soon.</p>
+	  <div class="span8 offset2">
+      <hr>
+      <br>
+      <h1>Helorank is under construction</h1>
+      <p class="lead">To be notified when we release Helorank, please click through below. We hope to hear from you soon.</p>
       <a class="btn btn-info" href="beta">Beta Testing</a>
       <a class="btn btn-info" href="#admin-login">Admin Log in &raquo;</a>
-    <br>
-    <br>
-    <hr>
-    <a class="btn btn-danger" href="#welcome">To Testing &raquo;</a>
+      <a class="btn btn-danger" href="#welcome">To Testing &raquo;</a>
+    </div>
   </div>
 {% endblock %}
