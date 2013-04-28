@@ -1,4 +1,5 @@
-{% extends "base-external.html" %}
+{% extends "base/base-external.html" %}
+{% load staticfiles %}
 
 {% block title %}Helorank | About{% endblock %}
 {% block nav-active2 %} class="active"{% endblock %}
@@ -7,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="span3 text-center">
-        <img src="static/img/logos/logo-bold-300x75.png" alt="Logo Bold">
+        <img src={% static "img/logos/logo-bold-300x75.png" %} alt="Logo Bold">
       </div>
       <div class="span9">
         <h1 class="heloblueDark">Let us set the record straight.</h1>
@@ -32,7 +33,7 @@
         <hr>
         <h2>Our Team</h2>
         <div class="text-center">
-          <img src="static/img/about/kyle-cody.jpg" alt="Kyle and Cody">
+          <img src={% static img/about/kyle-cody.jpg %} alt="Kyle and Cody">
         </div>
         <p class="lead">
           We'd love to hear from you. Send us a message via the Contact page or send us a tweet. @kyle @cody
