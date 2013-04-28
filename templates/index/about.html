@@ -1,5 +1,4 @@
-{% extends "base/base-external.html" %}
-{% load staticfiles %}
+{% extends "base-external.html" %}
 
 {% block title %}Helorank | About{% endblock %}
 {% block nav-active2 %} class="active"{% endblock %}
@@ -8,36 +7,39 @@
   <div class="container">
     <div class="row">
       <div class="span3 text-center">
-        <img src={% static "img/logos/logo-bold-300x75.png" %} alt="Logo Bold">
+        <img src="static/img/logos/logo-bold-300x75.png" alt="Logo Bold">
       </div>
       <div class="span9">
-        <h1 class="heloblueDark">Helorank ranks you among your friends based on the games you play.</h1>
+        <h1 class="heloblueDark">Let us set the record straight.</h1>
       </div>
     </div>
     <hr>
     <div class="row">
       <div class="span9 offset3">
-      <h2>Our Product</h2>
-      <p class="lead">
-        Consectetur adipiscing elit. Cras eget ultrices sem. Vivamus id elementum nunc. Praesent ut porta augue. Nulla ultrices sodales facilisis. Donec nibh lacus, cursus sed semper ut, molestie et nisi. Praesent blandit accumsan elementum. Sed gravida massa ut nisl molestie sed luctus metus imperdiet. Sed pellentesque imperdiet tempor. 
-      </p>
-      <hr>
-      <h2>Our Philosophy</h2>
-      <p class="lead">
-        Suspendisse potenti. Nunc vel iaculis purus. In sapien lacus, ultricies sit amet consectetur a, malesuada in orci. Praesent consectetur auctor est, a auctor ligula bibendum non. Vestibulum tincidunt enim ut ante rutrum hendrerit. Morbi a elit auctor risus egestas tempor nec eu est. Aenean lacinia, ipsum et pharetra venenatis, ipsum leo convallis ligula.
-      </p>
-      <hr>
-      <h2>Our Team</h2>
-      <div class="text-center">
-        <img src={% static "img/about/kyle-cody.jpg" %} alt="Kyle and Cody">
-      </div>
-      <p class="lead">
-        Curabitur vel tortor ut nibh pellentesque viverra eget vel sem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ac enim at mi sollicitudin lobortis et at magna. Donec mollis tempor nisl, vitae lacinia quam feugiat a. Nulla nec velit vitae dui sodales fringilla at id ante. Proin eget cursus purus.
-      </p>
-      
+        <h2>Our Product</h2>
+        <p class="lead">
+          Helorank is a new way to track the games you play every day. From golf with coworkers before lunch to pickup basketball after dinner, you're competitive. And when you win, you want people to remember your victory. But memory is faulty. Memory is selective. And the people you beat don't seem to remember at all. That's why we created Helorank.
+        </p>
+        <p class="lead">
+          Create a league with your friends. Submit games after you play them. It's that easy. We'll go over the results and rank you. 
+        </p>
+        <p class="lead">
+          Our app is more than a win/loss counter. As you win games, your power rating within a league of friends goes up. But as your score gets bigger, so does the target on your back. Lower-ranked players get a lot more points for taking down league leaders. We don't just sort you by the number of wins and losses. We rank you by the strength of your opponents in addition to game outcomes.
+        </p>
+        <p class="lead">
+          If you want to know how you measure up among your friends, sign up and give Helorank a try. Track your games. Quantify your wins. Helorank your reality.
+        </p>
+        <hr>
+        <h2>Our Team</h2>
+        <div class="text-center">
+          <img src="static/img/about/kyle-cody.jpg" alt="Kyle and Cody">
+        </div>
+        <p class="lead">
+          We'd love to hear from you. Send us a message via the Contact page or send us a tweet. @kyle @cody
+        </p>
       </div>
     </div>
-  </div>   
+  </div>    
 {% endblock %}
 
 {% block scripts %}{% endblock %}
