@@ -20,11 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'bio@ekskh*c*(xwozih4c+w#=l+dr0pi(%i2a_y$njq-97drgf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+if os.environ.get('DJANGO_DEBUG') is not None:
+    DEBUG= False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -89,7 +91,7 @@ TEMPLATE_DIRS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
-if (DEBUG):
+if DEBUG:
     STATIC_URL = '/static/'
     STATIC_ROOT = 'media'
     STATICFILES_DIRS = (
