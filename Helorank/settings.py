@@ -90,7 +90,7 @@ TEMPLATE_DIRS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 if (DEBUG):
-    STATIC_URL = '/media/'
+    STATIC_URL = '/static/'
     STATIC_ROOT = 'media'
     STATICFILES_DIRS = (
         'static',
