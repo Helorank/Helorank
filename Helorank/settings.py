@@ -20,13 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'bio@ekskh*c*(xwozih4c+w#=l+dr0pi(%i2a_y$njq-97drgf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if os.environ.get('DJANGO_DEBUG') is not None:
     DEBUG= False
 
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+AWS_STORAGE_BUCKET_NAME = 'helorank'
 
 
 # Application definition
@@ -38,7 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages'
+    'storages',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,7 +101,14 @@ if DEBUG:
         'static',
     )
 else:
+    AWS_ACCESS_KEY_ID = 'AKIAJFQSQMRXQG4I43TA'
+    AWS_SECRET_ACCESS_KEY = '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'
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    S3_URL = 'http://s3-us-west-1.amazonaws.com/helorank/'
     STATIC_URL = 'http://s3-us-west-1.amazonaws.com/helorank/'
+    STATICFILES_DIRS = (
+        'static',
+    )
 
 
     
