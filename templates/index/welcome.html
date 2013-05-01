@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="span4 text-center helper-signup">
+            <div class="span4 text-center pad-or white-text">
               OR
             </div>
           </div>
@@ -37,9 +37,15 @@
                 {% csrf_token %}
                 <input name="username" class="input-block-level" type="text" placeholder="Username">
                 <input name="email" class="input-block-level" type="text" placeholder="Email">
-                <input name="password" class="input-block-level" type="password" placeholder="Password">
-                <input class="input-block-level" type="password" placeholder="Confirm Password">
-                <button id="email-signup" class="btn btn-inverse btn-block" type="submit">Sign up via email</button>>
+                  <div class="row">
+                    <div class="span2">
+                      <input name="password" class="input-block-level" type="password" placeholder="Password">
+                    </div>
+                    <div class="span2">
+                      <input class="input-block-level" type="password" placeholder="Confirm Password">
+                    </div>
+                  </div>
+                <button id="email-signup" class="btn btn-inverse btn-block" type="submit">Sign up via email</button>
               </form>
             </div>
           </div>

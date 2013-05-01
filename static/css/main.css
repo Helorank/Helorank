@@ -1,5 +1,5 @@
 .clearfix {
-  *zoom: 1; 
+  *zoom: 1;
 }
 .clearfix:before,
 .clearfix:after {
@@ -203,6 +203,10 @@ textarea {
   overflow: hidden;
   z-index: -1;
   margin-right: 15px;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  background-color: #333333;
 }
 #splash img {
   display: block;
@@ -222,8 +226,10 @@ textarea {
   color: #ffffff;
   text-shadow: 0 1px #000;
 }
-.helper-signup {
+.pad-or {
   padding-bottom: 15px;
+}
+.white-text {
   color: #ffffff;
 }
 .featurette-divider {
