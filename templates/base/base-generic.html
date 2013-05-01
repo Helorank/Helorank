@@ -3,14 +3,11 @@
 
 {% block title %}{% endblock title %}
 
-{% block bodypad %}
-  <style>
-    body {
-      padding-top: 60px;
-      padding-bottom: 40px;
-    }
-  </style>
-{% endblock bodypad %}
+{% block bodypad %}{% endblock bodypad %}
+
+{% block pre-scripts %}
+  <script src={% static "js/main-preload.js" %}></script>
+{% endblock pre-scripts %}
 
 {% block login %}
   <div id="fb-root"></div>
@@ -56,7 +53,7 @@
           <span class="icon-bar"></span>
         </a>
         <a class="brand" href="Home">
-          <img src="static/img/signature-100x25.png">
+          <img src={% static "img/signatures/signature-100x25.png" %}>
         </a>
         <div class="nav-collapse collapse"> <!--.nav-collapse-->
           {% block nav-left %}{% endblock nav-left %}
@@ -71,10 +68,10 @@
 
 {% block footer %}{% endblock footer %}
 
-{% block scripts %}
+{% block post-scripts %}
   <script src={% static "js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" %}></script>
   <!--<script>window.jQuery || document.write('<script src={% static "/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>-->
   <script src={% static "js/vendor/bootstrap.js" %}></script>
   <script src={% static "js/main-postload.js" %}></script>
   {% block page-scripts %}{% endblock page-scripts %}
-{% endblock scripts %}
+{% endblock post-scripts %}

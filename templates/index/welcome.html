@@ -1,10 +1,11 @@
 {% extends "base-external.html" %}
+{% load staticfiles %}
 
 {% block title %}Helorank | Welcome{% endblock %}
 
 {% block content %}
   <div id="splash">
-    <img src="static/img/welcome/welcome-splash.jpg">
+    <img src={% static "img/welcome/welcome-splash.jpg" %}>
   </div>
   <div class="container">
     <div id="signup">
@@ -49,14 +50,14 @@
   <div class="container splashed">
   
     <div class="featurette">
-      <img class="featurette-image pull-right" src="static/img/welcome/welcome-gr1.png">
+      <img class="featurette-image pull-right" src={% static "img/welcome/welcome-gr1.png" %}>
       <h2 class="featurette-heading">Create power rankings</h2>
       <p class="lead">Helorank is more than a win counter. Everyone within a league is ranked by strength of schedule in addition to game outcome. Don't rely on stories alone to relay your last victory. Quantify it with Helorank. <a href="#tour">Learn about how we rank you &raquo;</a></p>
     </div>
     <hr class="hr-featurette">
   
     <div class="featurette">
-      <img class="featurette-image pull-left" src="static/img/welcome/welcome-gr2.png">
+      <img class="featurette-image pull-left" src={% static "img/welcome/welcome-gr2.png" %}>
       <h2 class="featurette-heading">Challenge friends</h2>
       <p class="lead">Helorank makes every competitive event more fun. Challenge the league leader. Root for an underdog. Go double or nothing. You can create rankings for any game you come up with. <a href="#contact">Let us know how you use Helorank &raquo;</a></p>
     </div>
@@ -64,7 +65,7 @@
     <hr class="hr-featurette">
   
     <div class="featurette">
-      <img class="featurette-image pull-right" src="static/img/welcome/welcome-gr3.png">
+      <img class="featurette-image pull-right" src={% static "img/welcome/welcome-gr3.png" %}>
       <h2 class="featurette-heading">Track every game</h2>
       <p class="lead">With Helorank, you can finally keep track of the games you play with friends. Submit a single game, a 64-team bracket or anything in between. We'll sort out the winners and losers and post the results to your dashboard. <a href="#tour">Take a tour &raquo;</a></p>
     </div>
@@ -72,4 +73,4 @@
   </div>
 {% endblock %}
 
-{% block scripts %}{% endblock %}
+{% block page-scripts %}{% endblock %}
