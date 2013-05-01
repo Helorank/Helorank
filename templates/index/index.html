@@ -11,14 +11,16 @@
 {% endblock %}
 
 {% block content%}
-	<div class="container">
-	  <div class="span8 offset2">
-      <br>
-      <h1>Helorank is under construction</h1>
-      <p class="lead">To be notified when we release Helorank, please click through below. We hope to hear from you soon.</p>
-      <a class="btn btn-info" href="beta">Beta Testing</a>
-      <a class="btn btn-info" href="#admin-login">Admin Log in &raquo;</a>
-      <a class="btn btn-danger" href="#welcome">To Testing &raquo;</a>
+	<div class="container text-center">
+	  <div class="row">
+  	  <div class="span8 offset2">
+        <h1>Helorank is under construction.</h1>
+        <form class="form-inline">
+          <input type="text" class="input-small" placeholder="Administrator">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+      </div>
     </div>
   </div>
 {% endblock %}
