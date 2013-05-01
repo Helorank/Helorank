@@ -22,7 +22,7 @@ SECRET_KEY = 'bio@ekskh*c*(xwozih4c+w#=l+dr0pi(%i2a_y$njq-97drgf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if os.environ.get('DJANGO_DEBUG') is not None:
-    DEBUG= False
+    DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -101,6 +101,7 @@ if DEBUG:
         'static',
     )
 else:
+    print 'hello'
     AWS_ACCESS_KEY_ID = 'AKIAJFQSQMRXQG4I43TA'
     AWS_SECRET_ACCESS_KEY = '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'
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
