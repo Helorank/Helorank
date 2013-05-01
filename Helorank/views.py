@@ -1,16 +1,10 @@
 from django.shortcuts import render
 
 def index(request):
-  return render(request, 'index/index.html', {})
+  return render(request, 'index/Construction.html', {})
 
-def welcome(request):
-  return render(request, 'index/welcome.html', {})
-
-def about(request):
-  return render(request, 'index/about.html', {})
-
-def login(request):
-  return render(request, 'index/login.html', {})
-
-def signup(request):
-  return render(request, 'index/signup.html', {})
+def SignUp(request):
+  return render(request, 'index/SignUp.html', {})
+  
+def Welcome(request):
+  return render(request, 'index/Welcome.html', {})
