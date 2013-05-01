@@ -2,86 +2,75 @@
 {% load staticfiles %}
 
 {% block title %}Helorank | Welcome{% endblock %}
-{% block nav-active1 %} class="active"{% endblock %}
 
 {% block content %}
+  <div id="splash">
+    <img src={% static "img/welcome/welcome-splash.jpg" %}>
+  </div>
   <div class="container">
-    <div class="row"><!--lede-->
-      <div class="span9">
-        <h2 class="heloblueDark">Track every game you play.</h2>
-        <h2 class="heloblueDark">Create power rankings among your friends.</h2>
-      </div>
-      <div class="span3">
-        <a href="#signup" class="btn btn-large btn-primary pull-right">Get started</a>
+    <div id="signup">
+      <div class="row">
+        <div class="span5 offset6">
+          <h2>Power rank your friends. Track every game.</h2>
+          <div class="row">
+            <div class="span4">
+              <form>
+                <input id="fb-signup" class="btn btn-block btn-facebook" type="submit" value="Sign up via Facebook">
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <form>
+                <input id="tw-signup" class="btn btn-block btn-twitter" type="submit" value="Sign up via Twitter">
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4 text-center helper-signup">
+              OR
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <form>
+                <input class="input-block-level" type="text" placeholder="Username">
+                <input class="input-block-level" type="text" placeholder="Email">
+                <input class="input-block-level" type="text" placeholder="Password">
+                <input class="input-block-level" type="text" placeholder="Confirm Password">
+                <input id="email-signup" class="btn btn-inverse btn-block" type="submit" value="Sign up via email">
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <hr>
-    <div class="row">
-      <div class="span4 offset4 text-center minipadding">
-        <img src={% static "img/logos/logo-bold-300x75.png" %} alt="Logo Bold">
-      </div>
-    </div><!--/lede-->
-
-    <div id="Carousel" class="carousel slide"><!--carousel-->
-      <ol class="carousel-indicators">
-          <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#Carousel" data-slide-to="1"></li>
-          <li data-target="#Carousel" data-slide-to="2"></li>
-          <li data-target="#Carousel" data-slide-to="3"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src={% static "img/index-carousel/carousel1.jpg" %} alt="Derrick Rose">
-          <div class="carousel-caption">
-            <h4>Helorank to settle the score.</h4>
-          </div>
-        </div>
-        <div class="item">
-          <img src={% static "img/index-carousel/carousel2.jpg" %} alt="Drew Brees">
-          <div class="carousel-caption">
-            <h4>Helorank to savor your victories.</h4>
-          </div>
-        </div>
-        <div class="item">
-          <img src={% static "img/index-carousel/carousel3.jpg" %} alt="Abby Wambach">
-          <div class="carousel-caption">
-            <h4>Helorank to silence your boss.</h4>
-          </div>
-        </div>
-        <div class="item">
-          <img src={% static "img/index-carousel/carousel4.jpg" %} alt="Tiger Woods">
-          <div class="carousel-caption">
-             <h4>Helorank to help dad remember.</h4>
-          </div>
-        </div>
-      </div>
-    </div><!--/carousel-->
-
-    <hr>
-    
-    <div class="row"><!--about-->
-      <div class="span4 text-center">
-        <img src={% static "img/logos/logo-graphic-300x75.jpg" %} alt="Logo Graphic">
-      </div>
-      <div class="span8">
-        <h2>About Helorank</h2>
-        <p>From a one-on-one FIFA bet to a 64-person basketball bracket, Helorank ranks your reality. Tell us what you play. Tell us who wins. We'll evaluate the games and create power rankings for you and your friends. Did you just defeat the best golfer in your dorm? Helorank knows. Do you only win easy tennis matches? Helorank knows. Don't rely on storytelling alone to remember your last game with friends. Track it. Quantify it. Helorank it.
-        </p>
-        <a href="#about" class="btn btn-primary">Learn more</a>
-        <a href="#login" class="btn btn-primary">Get started</a>
-        <br>
-        <br>
-      </div>
-    </div><!--/about-->
+  </div>
+  
+  <div class="container splashed">
+  
+    <div class="featurette">
+      <img class="featurette-image pull-right" src={% static "img/welcome/welcome-gr1.png" %}>
+      <h2 class="featurette-heading">Create power rankings</h2>
+      <p class="lead">Helorank is more than a win counter. Everyone within a league is ranked by strength of schedule in addition to game outcome. Don't rely on stories alone to relay your last victory. Quantify it with Helorank. <a href="#tour">Learn about how we rank you &raquo;</a></p>
+    </div>
+    <hr class="hr-featurette">
+  
+    <div class="featurette">
+      <img class="featurette-image pull-left" src={% static "img/welcome/welcome-gr2.png" %}>
+      <h2 class="featurette-heading">Challenge friends</h2>
+      <p class="lead">Helorank makes every competitive event more fun. Challenge the league leader. Root for an underdog. Go double or nothing. You can create rankings for any game you come up with. <a href="#contact">Let us know how you use Helorank &raquo;</a></p>
+    </div>
+  
+    <hr class="hr-featurette">
+  
+    <div class="featurette">
+      <img class="featurette-image pull-right" src={% static "img/welcome/welcome-gr3.png" %}>
+      <h2 class="featurette-heading">Track every game</h2>
+      <p class="lead">With Helorank, you can finally keep track of the games you play with friends. Submit a single game, a 64-team bracket or anything in between. We'll sort out the winners and losers and post the results to your dashboard. <a href="#tour">Take a tour &raquo;</a></p>
+    </div>
+  
   </div>
 {% endblock %}
 
-{% block page-scripts %}
-  <script type="text/javascript">
-    $(document).ready(function() {
-    $('.carousel').carousel({
-      interval: 6000,
-    });
-    });
-  </script>
-{% endblock %}
+{% block page-scripts %}{% endblock %}
