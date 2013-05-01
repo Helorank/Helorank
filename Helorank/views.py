@@ -9,9 +9,6 @@ def welcome(request):
 def about(request):
   return render(request, 'index/about.html', {})
 
-def beta(request):
-  return render(request, 'index/beta.html', {})
-
 def login(request):
   return render(request, 'index/login.html', {})
 

@@ -927,9 +927,6 @@
   }
 }
 @media (max-width: 979px) {
-  body {
-    padding-top: 0;
-  }
   .navbar-fixed-top,
   .navbar-fixed-bottom {
     position: static;
