@@ -15,6 +15,7 @@ urlpatterns = patterns('',
   url(r'^beta/', views.beta, name="beta"),
   url(r'^login/', views.login, name="login"),
   url(r'^signup/', views.signup, name='signup'),
+  url(r'^account/', include('accounts.urls', namespace="accounts")),
   url(r'^admin/', include(admin.site.urls)),
 )
 

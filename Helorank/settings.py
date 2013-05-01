@@ -60,17 +60,31 @@ WSGI_APPLICATION = 'Helorank.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deaensll3m9a0s',
-        'USER': 'zdudfdflhhgqbj',
-        'PASSWORD': 'E7HBOdFBXUA3cRVXpjdN3QlaAN',
-        'HOST': 'ec2-54-225-91-60.compute-1.amazonaws.com',
-        'PORT': '5432',
+if DEBUG:
+    # Development Database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'deaensll3m9a0s',
+            'USER': 'zdudfdflhhgqbj',
+            'PASSWORD': 'E7HBOdFBXUA3cRVXpjdN3QlaAN',
+            'HOST': 'ec2-54-225-91-60.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
     }
-}
+else:
+    #Production Database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd3qvf805r639eu',
+            'USER': 'znjhyvilaqetlg',
+            'PASSWORD': 'CNkeLSwjt4EwRFhW3M3vvV1eJl',
+            'HOST': 'ec2-54-225-84-29.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
+    }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
