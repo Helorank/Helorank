@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.hashers import *
 from accounts.models import Account
+from django.core.context_processors import csrf
 
 # Create your views here.
 def create_account_handler(request):
@@ -27,4 +28,6 @@ def create_account_handler_post(request):
     print encrypted_password
     newAccount = Account(email = email, username=username, password=encrypted_password)
     newAccount.save()
-    return render(request,'accounts/accountCreated.html',{ "account" : newAccount })
+    context = { "account" : newAccount }
+    context.update(csrf(request))
+    return render(request,'accounts/accountCreated.html',context)
