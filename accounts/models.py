@@ -11,6 +11,7 @@ class Account(models.Model):
   username = models.CharField(max_length=200)
   first_name = models.CharField(max_length=200, blank=True)
   last_name = models.CharField(max_length=200, blank=True)
+  profile_picture_url = models.URLField(max_length=200, blank=True)
 
   def __unicode__(self):
     return self.email
