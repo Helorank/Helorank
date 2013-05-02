@@ -39,7 +39,8 @@
       </div>
       <div class="row">
         <div class="span4">
-          <form>
+          <form method="post" action="/login/">
+            {% csrf_token %}
             <div class="row">
               <div class="span2">
                 <input name="email" class="input-block-level" type="text" placeholder="Email">

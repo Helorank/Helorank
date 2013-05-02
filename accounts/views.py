@@ -6,6 +6,9 @@ from util.util import *
 
 # Create your views here.
 def dashboard(request):
+  user = get_logged_in_user(request)
+  if user:
+    print "User: " + user.email
   return render(request, 'accounts/dashboard.html', {})
   
 def create_account_handler(request):

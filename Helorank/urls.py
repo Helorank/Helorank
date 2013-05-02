@@ -14,7 +14,7 @@ urlpatterns = patterns('',
   url(r'^logout/$', views.logout, name="logout"),
   url(r'^signUp/$', views.signUp, name="signUp"),
   url(r'^welcome/$',views.welcome, name="welcome"),
-  url(r'^account/$', include('accounts.urls', namespace="accounts")),
+  url(r'^account/', include('accounts.urls', namespace="accounts")),
 )
 
 if settings.DEBUG:
