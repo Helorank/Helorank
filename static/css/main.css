@@ -194,12 +194,16 @@ textarea {
     page-break-after: avoid;
   }
 }
+.test-shade {
+  background-color: #000000;
+  height: 2000px;
+}
 .content {
   position: absolute;
 }
 #splash {
   width: 100%;
-  height: auto;
+  height: 540;
   overflow: hidden;
   z-index: -1;
   margin-right: 15px;
@@ -270,25 +274,25 @@ textarea {
   }
 }
 .helogreen {
-  color: #6ade84;
+  color: #6ade84 !important;
 }
 .helogreenDark {
-  color: #0abc32;
+  color: #0abc32 !important;
 }
 .heloblue {
-  color: #1a44a7;
+  color: #1a44a7 !important;
 }
 .heloblueLight {
-  color: #71bed3;
+  color: #71bed3 !important;
 }
 .heloblueDark {
-  color: #09276d;
+  color: #09276d !important;
 }
 .helored {
-  color: #f9240d;
+  color: #f9240d !important;
 }
 .heloyellow {
-  color: #f9ab0e;
+  color: #f9ab0e !important;
 }
 .carousel img {
   min-width: 100%;
@@ -317,28 +321,35 @@ textarea {
 .foot a {
   padding: 0 10px;
 }
+#dashboard-pic {
+  padding: 10px 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#profile h2,
+#profile h6 {
+  margin: 3px 0;
+}
+.rating-nudge {
+  position: relative;
+  top: -8px;
+}
+#dashboard-menu h6 {
+  color: #09276d;
+}
 @media (min-width: 1200px) {
-  .carousel-caption h4 {
-    font-size: 450%;
-  }
+  
 }
 @media (min-width: 980px) and (max-width: 1199px) {
-  .carousel-caption h4 {
-    font-size: 350%;
-  }
+  
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  .carousel-caption h4 {
-    font-size: 275%;
-  }
+  
 }
 @media (max-width: 767px) {
-  .carousel-caption h4 {
-    font-size: 175%;
-  }
+  
 }
 @media (max-width: 480px) {
-  .carousel-caption h4 {
-    font-size: 150%;
-  }
+  
 }

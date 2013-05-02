@@ -1,11 +1,56 @@
 {% extends "base/base-internal.html" %}
 {% load staticfiles %}
 
-{% block title %}Helorank | Welcome{% endblock %}
-{% block bodypad %}{% endblock %}
+{% block title %}Helorank | Dashboard{% endblock %}
+{% block bodypad %}
+<style>
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>{% endblock %}
+
+{% block nav-active1 %} class="active"{% endblock %}
 
 {% block content %}
-Testing.
+  <div class="container">
+    <div class="row">
+      <div class="span2 hidden-phone">
+        <div id="profile" data-spy="affix" data-offset-top="300">
+          <img id="dashboard-pic" class="centered" src={% static "img/dashboard/dashboard-pic-100x100.jpg" %} placeholder="Kyle">   
+          <div id="dashboard-rating" class="text-center">
+            <h6 class="heloblueDark">AVERAGE RATING</h6>
+            <h2 class="rating-nudge">2137</h2>
+          </div>
+          <div id="dashboard-menu">
+            <ul class="nav nav-pills nav-stacked">
+              <!-- Need full set of glyphicons -->
+              <li><a href="#dead"><i class="icon-pencil"></i> Profile</a></li>
+              <li><a href="#dead"><i class="icon-cog"></i> Settings</a></li>
+              <li><a href="#dead"><i class="icon-list"></i> Leagues</a></li>
+              <li><a href="#dead"><i class="icon-star"></i> Games</a></li>
+              <li><a href="#dead"><i class="icon-user"></i> Players</a></li>
+              <li><a href="#dead"><i class="icon-globe"></i> Friends</a></li>
+              <li><a href="#dead"><i class="icon-thumbs-up"></i> Facebook</a></li>
+              <li><a href="#dead"><i class="icon-thumbs-up"></i> Twitter</a></li>
+              <li><a href="logout"><i class="icon-off"></i> Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="span5">
+        Gamefeed
+      </div>
+      <div class="span5 hidden-phone test-shade">
+        JS Actions
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
-{% block page-scripts %}{% endblock %}
+{% block page-scripts %}
+  <script type="text/javascript">
+    $('#profile').affix({
+    })
+  </script>
+{% endblock %}
