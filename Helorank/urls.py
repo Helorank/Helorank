@@ -10,8 +10,8 @@ from Helorank import views
 urlpatterns = patterns('',
   # Examples:
   url(r'^$', views.index, name="index"),
-  url(r'^SignUp/', views.SignUp, name="SignUp"),
-  url(r'^Welcome/',views.Welcome, name="Welcome"),
+  url(r'^signUp/', views.signUp, name="signUp"),
+  url(r'^welcome/',views.welcome, name="welcome"),
   url(r'^account/', include('accounts.urls', namespace="accounts")),
 )
 

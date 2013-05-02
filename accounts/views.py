@@ -4,12 +4,14 @@ from accounts.models import Account
 from django.core.context_processors import csrf
 
 # Create your views here.
+def dashboard(request):
+  return render(request, 'accounts/dashboard.html', {})
+  
 def create_account_handler(request):
   if request.method == 'GET':
     return create_account_handler_get(request)
   elif request.method == 'POST':
     return create_account_handler_post(request)
-  
 
 def create_account_handler_get(request):
   return render(request,'accounts/createAccount.html',{ "error" : "No error"})
