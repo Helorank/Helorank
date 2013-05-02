@@ -10,9 +10,10 @@ from Helorank import views
 urlpatterns = patterns('',
   # Examples:
   url(r'^$', views.index, name="index"),
-  url(r'^signUp/', views.signUp, name="signUp"),
-  url(r'^welcome/',views.welcome, name="welcome"),
+  url(r'^login/$', views.login, name="login"),
   url(r'^logout/$', views.logout, name="logout"),
+  url(r'^signUp/$', views.signUp, name="signUp"),
+  url(r'^welcome/$',views.welcome, name="welcome"),
   url(r'^account/', include('accounts.urls', namespace="accounts")),
 )
 

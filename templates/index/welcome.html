@@ -33,7 +33,7 @@
           </div>
           <div class="row">
             <div class="span4">
-              <form method="post" action="/account/createAccount">
+              <form method="post" action="/account/createAccount/">
                 {% csrf_token %}
                 <input name="username" class="input-block-level" type="text" placeholder="Username">
                 <input name="email" class="input-block-level" type="text" placeholder="Email">

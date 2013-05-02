@@ -1,0 +1,62 @@
+{% extends "base/base-external.html" %}
+
+{% block bodypad %}
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+  </style>
+{% endblock %}
+
+{% block title %}Helorank | Log in{% endblock %}
+
+{% block content %}
+<div class="container"> <!--content-->
+  <div class="row">
+      <div class="span4 offset4">
+      <h1>Log in</h1>
+      <hr>
+      <div class="row">
+        <div class="span4">
+          <form>
+            <input id="fb-login" class="btn btn-block btn-facebook" type="submit" value="Log in via Facebook">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4">
+          <form>
+            <input id="tw-login" class="btn btn-block btn-twitter" type="submit" value="Log in via Twitter">
+          </form>
+        </div>
+      </div>
+      <p>Not registered? <a href="/signUp">Sign up&raquo;</a></p>
+      <div class="row">
+        <div class=" span4 text-center pad-or">
+          OR
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4">
+          <form method="post" action="/login/">
+            {% csrf_token %}
+            <div class="row">
+              <div class="span2">
+                <input name="email" class="input-block-level" type="text" placeholder="Email">
+              </div>
+              <div class="span2">
+                <input name="password" class="input-block-level" type="password" placeholder="Password">
+              </div>
+            </div>
+            <button id="email-login" class="btn btn-inverse btn-block" type="submit">Log in via email</button>
+          </form>
+          <p>Forget your password? <a href="/signUp">Reset password&raquo;</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!--/content-->
+{% endblock %}
+
+{% block scripts %}{% endblock %}
