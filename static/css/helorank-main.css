@@ -333,6 +333,7 @@ textarea {
 }
 #dashboard-profile h6 {
   text-align: center;
+  margin-top: 0;
   margin-bottom: 10px;
 }
 #avg-rating,
@@ -385,14 +386,99 @@ textarea {
   border-radius: 6px;
   border: 2px solid #e3e3e3;
   border-color: #6ade84;
-  padding: 10px 10px;
+  padding: 0 15px;
+  margin-bottom: 15px;
   height: auto;
+}
+#action-bar .nav-tabs > li > a {
+  font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border: 0;
+}
+#action-bar .nav-tabs > .active > a,
+#action-bar .nav-tabs > .active > a:focus,
+#action-bar .nav-tabs > .active > a:hover {
+  color: #ffffff;
+  background-color: #6ade84;
 }
 #action-bar .nav-tabs {
   border-bottom: 0;
 }
 #action-bar .btn {
-  margin: 15px 15px;
+  margin: 25px 15px;
+}
+#action-bar .nav {
+  margin-bottom: 0px;
+}
+#stories .accordion-group {
+  border: none;
+}
+#stories .accordion-heading {
+  height: 70px;
+  color: #333;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+#stories small {
+  color: #ccc;
+}
+#stories .accordion-heading:focus,
+#stories .accordion-heading:hover {
+  background-color: #6ade84;
+  color: #ffffff;
+}
+#stories .accordion-heading:focus small,
+#stories .accordion-heading:hover small {
+  color: #ffffff;
+}
+#stories .accordion-heading:focus .arrow-up,
+#stories .accordion-heading:hover .arrow-up {
+  border-bottom: 20px solid #ffffff;
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#stories .accordion-heading:focus .arrow-down,
+#stories .accordion-heading:hover .arrow-down {
+  border-top: 20px solid #ffffff;
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+#stories img {
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+  padding-right: 15px;
+}
+#stories .summary {
+  padding: 5px 5px 5px 0;
+  font-size: 17.5px;
+}
+#stories .arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid #6ade84;
+  margin: 25px 10px;
+}
+#stories .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #1a44a7;
+  margin: 25px 10px;
 }
 @media (min-width: 1200px) {
   #dashboard-pic {
