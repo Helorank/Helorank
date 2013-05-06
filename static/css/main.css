@@ -338,6 +338,10 @@ textarea {
 #dashboard-menu h6 {
   color: #09276d;
 }
+#dashboard-pic {
+  width: 80%;
+  height: 80%;
+}
 @media (min-width: 1200px) {
   
 }
