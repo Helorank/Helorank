@@ -1,23 +1,22 @@
-{% extends "base/base-internal.html" %}
+{% extends "base/base-app.html" %}
 {% load staticfiles %}
 
 {% block title %}Helorank | Dashboard{% endblock title %}
 
 {% block bodypad %}
-<style>
-  body {
-    padding-top: 60px;
-    padding-bottom: 40px;
-  }
-</style>{% endblock bodypad %}
-
-{% block nav-active1 %} class="active"{% endblock nav-active1 %}
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 15px;
+    }
+  </style>
+{% endblock bodypad %}
 
 {% block content %}
   <div class="container">
     <div class="row">
       <!-- Profile -->
-      <div id="dashboard-profile" class="span2">
+      <div id="dashboard-profile" class="span2 affix hidden-phone">
         <img id="dashboard-pic" src={% static "img/dashboard/dashboard-pic-140x140.jpg" %} placeholder="Kyle">  
         <h4 class="text-center">KV3535</h4>
         <div id="avg-rating">
@@ -28,7 +27,7 @@
           <h3>5402</h3>
         </div>
         <h6 class="heloyellow">INFLUENCE</h6>
-        <div id="dashboard-menu" class="hidden-phone">
+        <div id="dashboard-menu">
           <ul class="nav nav-pills nav-stacked">
             <!-- Need full set of glyphicons -->
             <li><a href="#dead"><i class="icon-pencil"></i> Profile</a></li>
@@ -37,12 +36,11 @@
             <li><a href="#dead"><i class="icon-star"></i> Games</a></li>
             <li><a href="#dead"><i class="icon-user"></i> Players</a></li>
             <li><a href="#dead"><i class="icon-globe"></i> Friends</a></li>
-            <li><a href="#dead"><i class="icon-off"></i> Log out</a></li>
           </ul>
         </div>
       </div>
       <!-- Gamefeed -->
-      <div id="gamefeed" class="span10">
+      <div id="gamefeed" class="span10 offset2">
         <div id="action-bar" class="hidden-phone">
           <ul id="myTab" class="nav nav-tabs">
             <li class="active"><a href="#addGame" data-toggle="tab">Add Game</a></li>
@@ -70,131 +68,138 @@
             </div>
           </div>
           <!-- Read in stories -->
-          <div class="accordion" id="stories">
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story1">
-                <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
-                <div class="arrow-up pull-right"></div>
-                <p class="summary">Peter played Risk with you, Cody and 2 others.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story1" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
+          <div class="row">
+            <div class="span8">
+              <div class="accordion" id="stories">
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story1">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
+                    <div class="arrow-up pull-right"></div>
+                    <p class="summary">Peter played Risk with you, Cody and 2 others.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story1" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story2">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
+                    <div class="arrow-down pull-right"></div>
+                    <p class="summary">Jake played Beer Pong with Kendall and 5 others. <br>
+                    <small> MOUNTAIN VIEW, CA</small></p>
+                  </div>
+                  <div id="story2" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story3">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
+                    <div class="arrow-up pull-right"></div>
+                    <p class="summary">Peter played Basketball with you.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story3" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story4">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
+                    <p class="summary">Peter challenged you to a game of Basketball.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story4" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story5">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
+                    <p class="summary">Jake played Beer Pong with Max, Jillian and Graham.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story5" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story6">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex3-70x70.jpg" %}>
+                    <p class="summary">Michael challenged Cody and Jackson to a game of Risk.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story6" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story7">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
+                    <div class="arrow-down pull-right"></div>
+                    <p class="summary">Jake played Basketball with you, John and Peter.<br>  
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story7" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story8">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
+                    <div class="arrow-down pull-right"></div>
+                    <p class="summary">Peter played Flip Cup with you and 17 others.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story8" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story9">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex3-70x70.jpg" %}>
+                    <p class="summary">Michael played Risk with Cody and Rachel.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story9" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story10">
+                    <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
+                    <p class="summary">Jake bet on your Challenge.<br>
+                    <small> STANFORD, CA</small></p>
+                  </div>
+                  <div id="story10" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Story detail...
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story2">
-                <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
-                <div class="arrow-down pull-right"></div>
-                <p class="summary">Jake played Beer Pong with Kendall, Trevor, and 5 others. <br>
-                <small> MOUNTAIN VIEW, CA</small></p>
-              </div>
-              <div id="story2" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story3">
-                <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
-                <div class="arrow-up pull-right"></div>
-                <p class="summary">Peter played Basketball with you.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story3" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story4">
-                <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
-                <p class="summary">Peter challenged you to a game of Basketball.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story4" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story5">
-                <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
-                <p class="summary">Jake played Beer Pong with Max, Jillian and Graham.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story5" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story6">
-                <img class="pull-left" src={% static "img/dashboard/user-ex3-70x70.jpg" %}>
-                <p class="summary">Michael challenged Cody and Jackson to a game of Risk.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story6" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story7">
-                <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
-                <div class="arrow-down pull-right"></div>
-                <p class="summary">Jake played Basketball with you, John and Peter.<br>  
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story7" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story8">
-                <img class="pull-left" src={% static "img/dashboard/user-ex1-70x70.jpg" %}>
-                <div class="arrow-down pull-right"></div>
-                <p class="summary">Peter played Flip Cup with you, Mary Beth, and 17 others.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story8" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story9">
-                <img class="pull-left" src={% static "img/dashboard/user-ex3-70x70.jpg" %}>
-                <p class="summary">Michael played Risk with Cody and Rachel.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story9" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading" data-toggle="collapse" data-parent="#stories" href="#story10">
-                <img class="pull-left" src={% static "img/dashboard/user-ex2-70x70.jpg" %}>
-                <p class="summary">Jake bet on your Challenge.<br>
-                <small> STANFORD, CA</small></p>
-              </div>
-              <div id="story10" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Story detail...
-                </div>
-              </div>
+            <div class="span2 hidden-phone">
+              <h6>More content?</h6>
             </div>
           </div>
         </div>
@@ -203,6 +208,7 @@
   </div>
 {% endblock content %}
 
-{% block page-scripts %}
+{% block footer-all %}{% endblock footer-all %}
 
+{% block page-scripts %}
 {% endblock page-scripts %}

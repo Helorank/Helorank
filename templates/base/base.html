@@ -12,6 +12,7 @@
     <meta name="description" content="Track every game you play. Create power rankings among your friends.">
     <meta name="viewport" content="width=device-width">     
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href={% static "css/helorank-bootstrap.css" %}>
     {% block bodypad %}{% endblock bodypad %}
@@ -39,7 +40,7 @@
     {% block login %}{% endblock login %}
     {% block navbar %}{% endblock navbar %}
     {% block content %}{% endblock content %}
-    
+    {% block footer-all %}
     <div class="container"> <!--footer-->
       <hr>
       <footer class="foot">
@@ -53,7 +54,8 @@
         </div>
       </footer>
     </div> <!--/footer-->
-    
+    {% endblock footer-all %}
+
     <!--Scripts-->
     {% block post-scripts %}{% endblock post-scripts %}
     

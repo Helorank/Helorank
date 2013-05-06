@@ -328,6 +328,13 @@ textarea {
   -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
 }
+#dashboard-profile {
+  height: 100%;
+}
+#gamefeed {
+  border-left: 1px solid #eeeeee;
+  padding-left: 10px;
+}
 #dashboard-profile h3 {
   margin: 0 0 20px 0;
 }
@@ -422,13 +429,31 @@ textarea {
   -moz-border-radius: 6px;
   border-radius: 6px;
   margin-bottom: 15px;
+  background-color: #fdfdfd;
+  background-image: -moz-linear-gradient(top, #ffffff, #fafafa);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#fafafa));
+  background-image: -webkit-linear-gradient(top, #ffffff, #fafafa);
+  background-image: -o-linear-gradient(top, #ffffff, #fafafa);
+  background-image: linear-gradient(to bottom, #ffffff, #fafafa);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fffafafa', GradientType=0);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.065);
 }
 #stories small {
   color: #ccc;
 }
 #stories .accordion-heading:focus,
 #stories .accordion-heading:hover {
-  background-color: #6ade84;
+  background-color: #52d870;
+  background-image: -moz-linear-gradient(top, #6ade84, #2ece52);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6ade84), to(#2ece52));
+  background-image: -webkit-linear-gradient(top, #6ade84, #2ece52);
+  background-image: -o-linear-gradient(top, #6ade84, #2ece52);
+  background-image: linear-gradient(to bottom, #6ade84, #2ece52);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6ade84', endColorstr='#ff2ece52', GradientType=0);
   color: #ffffff;
 }
 #stories .accordion-heading:focus small,
@@ -462,7 +487,6 @@ textarea {
 }
 #stories .summary {
   padding: 5px 5px 5px 0;
-  font-size: 17.5px;
 }
 #stories .arrow-up {
   width: 0;

@@ -1,0 +1,71 @@
+{% extends "base/base-generic.html" %}
+{% load staticfiles %}
+
+{% block title %}Helorank | Welcome{% endblock title %}
+
+{% block navbar %}
+  <div class="navbar navbar-fixed-top"> <!--.navbar-->
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">
+          <img src={% static "img/signatures/signature-100x25.png" %}>
+        </a>
+        <div class="nav-collapse collapse"> <!--.nav-collapse-->
+            <ul class="nav">
+              <li class="active"><a href="dead">Dashboard</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#dead">Add Game</a></li>
+                  <li><a href="#dead">Add League</a></li>
+                  <li><a href="#dead">Challenge Friend</a></li>
+                  <li><a href="#dead">Make a Bet</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#dead">Feedback</a></li>
+                  <li><a href="#dead">Log out</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div> <!--/.nav-collapse -->
+      </div>
+    </div>
+  </div> <!--/.navbar -->
+{% endblock navbar %}
+            
+{% block footer %}
+  <div class="span2">
+    <h5>MENU</h5>
+    <ul class="nav">
+      <li><a href="index">Home</a></li>
+      <li><a href="dashboard">Dashboard</a></li>
+      <li><a href="#dead">Community</a></li>
+      <li><a href="#dead">How it Works</a></li>
+    </ul>
+  </div>
+  <div class="span2">
+    <h5>SOCIAL</h5>
+    <ul class="nav">
+      <li><a href="http://facebook.com/Helorank">Facebook</a></li>
+      <li><a href="http://twitter.com/Helorank">Twitter</a></li>
+      <li><a href="#dead">Blog</a></li>
+    </ul>
+  </div>
+  <div class="span2">
+    <h5>ETC</h5>
+    <ul class="nav">
+      <li><a href="#dead">Press</a></li>
+      <li><a href="#dead">Privacy</a></li>
+      <li><a href="#dead">Terms</a></li>
+    </ul>
+  </div>
+  <div class="span6 text-center">
+    <img src={% static "img/signatures/signature-300x75.png" %}>
+  </div>
+{% endblock footer %}

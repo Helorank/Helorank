@@ -1,10 +1,6 @@
 {% extends "base/base.html" %}
 {% load staticfiles %}
 
-{% block title %}{% endblock title %}
-
-{% block bodypad %}{% endblock bodypad %}
-
 {% block pre-scripts %}
   <script src={% static "js/main-preload.js" %}></script>
 {% endblock pre-scripts %}
@@ -63,10 +59,6 @@
     </div>
   </div> <!--/.navbar -->
 {% endblock navbar %}
-
-{% block content %}{% endblock content %}
-
-{% block footer %}{% endblock footer %}
 
 {% block post-scripts %}
   <script src={% static "js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" %}></script>
