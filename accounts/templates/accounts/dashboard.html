@@ -1,54 +1,78 @@
 {% extends "base/base-internal.html" %}
 {% load staticfiles %}
 
-{% block title %}Helorank | Dashboard{% endblock %}
+{% block title %}Helorank | Dashboard{% endblock title %}
+
 {% block bodypad %}
 <style>
   body {
     padding-top: 60px;
     padding-bottom: 40px;
   }
-</style>{% endblock %}
+</style>{% endblock bodypad %}
 
-{% block nav-active1 %} class="active"{% endblock %}
+{% block nav-active1 %} class="active"{% endblock nav-active1 %}
 
 {% block content %}
   <div class="container">
     <div class="row">
-      <div class="span2 hidden-phone">
-        <div id="dashboard-profile" class="span2" data-spy="affix" data-offset-top="0">
-          <img id="dashboard-pic" class="centered" src={% static "img/dashboard/dashboard-pic-100x100.jpg" %} placeholder="Kyle">   
-          <div id="dashboard-rating" class="text-center">
-            <h6 class="heloblueDark">AVERAGE RATING</h6>
-            <h2 class="rating-nudge">2137</h2>
-          </div>
-          <div id="dashboard-menu">
-            <ul class="nav nav-pills nav-stacked">
-              <!-- Need full set of glyphicons -->
-              <li><a href="#dead"><i class="icon-pencil"></i> Profile</a></li>
-              <li><a href="#dead"><i class="icon-cog"></i> Settings</a></li>
-              <li><a href="#dead"><i class="icon-list"></i> Leagues</a></li>
-              <li><a href="#dead"><i class="icon-star"></i> Games</a></li>
-              <li><a href="#dead"><i class="icon-user"></i> Players</a></li>
-              <li><a href="#dead"><i class="icon-globe"></i> Friends</a></li>
-              <li><a href="logout"><i class="icon-off"></i> Log out</a></li>
-            </ul>
+      <div id="dashboard-profile" class="span2">
+        <img id="dashboard-pic" class="centered" src={% static "img/dashboard/dashboard-pic-100x100.jpg" %} placeholder="Kyle">  
+        <h4 class="text-center">KV3535</h4>
+        <div id="avg-rating">
+          <h3>2130</h3>
+        </div>
+        <h6 class="helored">AVG RATING</h6>
+        <div id="influence">
+          <h3>5402</h3>
+        </div>
+        <h6 class="heloyellow">INFLUENCE</h6>
+        <div id="dashboard-menu">
+          <ul class="nav nav-pills nav-stacked">
+            <!-- Need full set of glyphicons -->
+            <li><a href="#dead"><i class="icon-pencil"></i> Profile</a></li>
+            <li><a href="#dead"><i class="icon-cog"></i> Settings</a></li>
+            <li><a href="#dead"><i class="icon-list"></i> Leagues</a></li>
+            <li><a href="#dead"><i class="icon-star"></i> Games</a></li>
+            <li><a href="#dead"><i class="icon-user"></i> Players</a></li>
+            <li><a href="#dead"><i class="icon-globe"></i> Friends</a></li>
+            <li><a href="#dead"><i class="icon-off"></i> Log out</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span10">
+        <div id="action-bar">
+          <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#addGame" data-toggle="tab">Add Game</a></li>
+            <li><a href="#addLeague" data-toggle="tab">Add League</a></li>
+            <li><a href="#challenge" data-toggle="tab">Challenge a Friend</a></li>
+            <li><a href="#makeBet" data-toggle="tab">Make a Bet</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="addGame">
+              <a href="#dead" class="btn btn-primary pull-right">Add Game</a>
+              <h4>As you submit more Games, Helorank becomes more accurate. Add a game today!</h4>
+            </div>
+            <div class="tab-pane fade" id="addLeague">
+              <a href="#dead" class="btn btn-primary pull-right">Add League</a>
+              <h4>Helorank is more fun when you add more friends. Start a new League.</h4>
+            </div>
+            <div class="tab-pane fade" id="challenge">
+              <a href="#dead" class="btn btn-primary pull-right">Challenge</a>
+              <h4>Shake up the rankings. Challenge a friend to see where you really stand.</h4>
+            </div>
+            <div class="tab-pane fade" id="makeBet">
+              <a href="#dead" class="btn btn-primary pull-right">Make a Bet</a>
+              <h4>Are you a kingmaker? Bet your Influence on friends' games.</h4>
+            </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="span5">
-        Gamefeed
-      </div>
-      <div class="span5 hidden-phone test-shade">
-        JS Actions
-      </div>
     </div>
   </div>
-{% endblock %}
+{% endblock content %}
 
 {% block page-scripts %}
-  <script type="text/javascript">
-    $('#profile').affix({
-    })
-  </script>
-{% endblock %}
+
+{% endblock page-scripts %}

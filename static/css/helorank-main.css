@@ -1,0 +1,420 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  /* Responsive images (ensure images don't scale beyond their parents) */
+
+  max-width: 100%;
+  /* Part 1: Set a maxium relative to the parent */
+
+  width: auto\9;
+  /* IE7-8 need help adjusting responsive images */
+
+  height: auto;
+  /* Part 2: Scale the height according to the width, otherwise you get stretching */
+
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+#map_canvas img,
+.google-maps img {
+  max-width: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+button,
+input {
+  *overflow: visible;
+  line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+@media print {
+  * {
+    text-shadow: none !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+.test-shade {
+  background-color: #000000;
+  height: 2000px;
+}
+.content {
+  position: absolute;
+}
+#splash {
+  width: 100%;
+  height: 540;
+  overflow: hidden;
+  z-index: -1;
+  margin-right: 15px;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  background-color: #333333;
+}
+#splash img {
+  display: block;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.splashed {
+  margin-top: 20px;
+}
+#signup {
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+}
+#signup h2 {
+  color: #ffffff;
+  text-shadow: 0 1px #000;
+}
+.pad-or {
+  padding-bottom: 15px;
+}
+.white-text {
+  color: #ffffff;
+}
+.featurette-divider {
+  margin: 80px 0;
+}
+.featurette {
+  padding-top: 30px;
+  overflow: hidden;
+}
+.hr-featurette {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+.featurette-image.pull-left {
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 200;
+  line-height: 1;
+  line-spacing: -1px;
+}
+@media (max-width: 979px) {
+  .featurette {
+    height: auto;
+    padding: 0;
+  }
+  .featurette-image.pull-left,
+  .featurette-image.pull-right {
+    display: block;
+    float: none;
+    max-width: 40%;
+    margin: 0 auto 20px;
+  }
+}
+.helogreen {
+  color: #6ade84 !important;
+}
+.helogreenDark {
+  color: #0abc32 !important;
+}
+.heloblue {
+  color: #1a44a7 !important;
+}
+.heloblueLight {
+  color: #71bed3 !important;
+}
+.heloblueDark {
+  color: #09276d !important;
+}
+.helored {
+  color: #f9240d !important;
+}
+.heloyellow {
+  color: #f9ab0e !important;
+}
+.carousel img {
+  min-width: 100%;
+}
+.largerfont {
+  font-size: 45pt;
+}
+.padding {
+  padding: 30px 0;
+}
+.minipadding {
+  padding: 0 0 20px 0;
+}
+.nopadding {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+.foot h5,
+.foot a {
+  padding: 0 10px;
+}
+#dashboard-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140px;
+  height: 140px;
+  max-height: 140px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
+}
+#dashboard-profile h3 {
+  margin: 0 0 20px 0;
+}
+#dashboard-profile h6 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#avg-rating,
+#influence {
+  text-align: center;
+  margin: 0 0 0 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 100%;
+  max-width: 140px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.065);
+}
+#avg-rating {
+  background-color: #ec200a;
+  background-image: -moz-linear-gradient(top, #f9240d, #d81a05);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9240d), to(#d81a05));
+  background-image: -webkit-linear-gradient(top, #f9240d, #d81a05);
+  background-image: -o-linear-gradient(top, #f9240d, #d81a05);
+  background-image: linear-gradient(to bottom, #f9240d, #d81a05);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9240d', endColorstr='#ffd81a05', GradientType=0);
+}
+#influence {
+  background-color: #eca10b;
+  background-image: -moz-linear-gradient(top, #f9ab0e, #d99305);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9ab0e), to(#d99305));
+  background-image: -webkit-linear-gradient(top, #f9ab0e, #d99305);
+  background-image: -o-linear-gradient(top, #f9ab0e, #d99305);
+  background-image: linear-gradient(to bottom, #f9ab0e, #d99305);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9ab0e', endColorstr='#ffd99305', GradientType=0);
+}
+#avg-rating i,
+#influence i,
+#avg-rating h3,
+#influence h3 {
+  color: #ffffff;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#action-bar {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 2px solid #e3e3e3;
+  border-color: #6ade84;
+  padding: 10px 10px;
+  height: auto;
+}
+#action-bar .nav-tabs {
+  border-bottom: 0;
+}
+#action-bar .btn {
+  margin: 15px 15px;
+}
+@media (min-width: 1200px) {
+  #dashboard-pic {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  #dashboard-pic {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #dashboard-pic {
+    width: 104px;
+    height: 104px;
+  }
+}
+@media (max-width: 767px) {
+  
+}
+@media (max-width: 480px) {
+  
+}
