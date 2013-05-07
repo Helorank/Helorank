@@ -56,7 +56,7 @@
             </div>
             <div class="tab-pane fade" id="addLeague">
               <a href="#league-modal" role="button" data-toggle="modal" class="btn btn-primary pull-right">Add League</a>
-              <h4>Separate different groups of friends. Start a new League.</h4>
+              <h4>This should be a separate page with drag and drop plus admin options.</h4>
             </div>
             <div class="tab-pane fade" id="challenge">
               <a href="#challenge-modal" role="button" data-toggle="modal" class="btn btn-primary pull-right">Challenge</a>
@@ -209,15 +209,17 @@
       <div id="game-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel">Add Game</h3>
+          <h3 id="modal1">Add Game</h3>
         </div>
-        <div class="modal-body">
-          <p>Form shit</p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          <button class="btn btn-primary">Add Game</button>
-        </div>
+        <form>
+          <div class="modal-body">
+            <p>Add your latest games.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button type="submit" class="btn btn-primary">Challenge</button>
+          </div>
+        </form>
       </div>
 
       <div id="league-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -239,13 +241,33 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <h3 id="myModalLabel">Challenge a Friend</h3>
         </div>
-        <div class="modal-body">
-          <p>Form shit</p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          <button class="btn btn-primary">Challenge</button>
-        </div>
+        <form>
+          <div class="modal-body">
+            <p>Challenge a friend via Facebook or email.</p>
+            <label>League</label>
+            <select>
+              <option>Junipero</option>
+              <option>Box</option>
+              <option>Theta Delt</option>
+              <option>IM Basketball</option>
+              <option>Read me in</option>
+            </select>
+            <hr>
+            <label>Friend</label>
+            <span class="help-block">Type a name, username, or email address.</span>
+            <input type="text" placeholder="typeahead...">
+            <label>Game</label>
+            <span class="help-block">Use a suggested game or add a new one.</span>
+            <input type="text" placeholder="typeahead...">
+            <label>Comments</label>
+            <span class="help-block">Talk some shit</span>
+            <textarea rows="4"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button type="submit" class="btn btn-primary">Challenge</button>
+          </div>
+        </form>
       </div>
 
       <div id="bet-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

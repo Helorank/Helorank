@@ -504,6 +504,13 @@ textarea {
   border-top: 20px solid #1a44a7;
   margin: 25px 10px;
 }
+.modal label {
+  color: #1a44a7;
+  font-weight: bold;
+}
+.modal form {
+  margin: 0;
+}
 @media (min-width: 1200px) {
   #dashboard-pic {
     width: 140px;
