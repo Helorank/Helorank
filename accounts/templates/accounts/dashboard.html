@@ -41,6 +41,7 @@
       </div>
       <!-- Gamefeed -->
       <div id="gamefeed" class="span10 offset2">
+        <!-- Recommended actions -->
         <div id="action-bar" class="hidden-phone">
           <ul id="myTab" class="nav nav-tabs">
             <li class="active"><a href="#addGame" data-toggle="tab">Add Game</a></li>
@@ -50,24 +51,24 @@
           </ul>
           <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade in active" id="addGame">
-              <a href="#dead" class="btn btn-primary pull-right">Add Game</a>
+              <a href="#game-modal" role="button" data-toggle="modal" class="btn btn-primary pull-right">Add Game</a>
               <h4>As you submit more Games, Helorank becomes more accurate. Add a Game today!</h4>
             </div>
             <div class="tab-pane fade" id="addLeague">
-              <a href="#dead" class="btn btn-primary pull-right">Add League</a>
+              <a href="#league-modal" role="button" data-toggle="modal" class="btn btn-primary pull-right">Add League</a>
               <h4>Separate different groups of friends. Start a new League.</h4>
             </div>
             <div class="tab-pane fade" id="challenge">
-              <a href="#dead" class="btn btn-primary pull-right">Challenge</a>
+              <a href="#challenge-modal" role="button" data-toggle="modal" class="btn btn-primary pull-right">Challenge</a>
               <h4>Shake up the rankings. Challenge a friend to see where you really stand.</h4>
             </div>
             <div class="tab-pane fade" id="makeBet">
-              <a href="#dead" class="btn btn-primary pull-right">Make a Bet</a>
+              <a href="#bet-modal" role="button" data-toggle="modal" class="btn btn-primary pull-right">Make a Bet</a>
               <h4>Are you a kingmaker? Bet your Influence on friends' games.</h4>
             </div>
-            </div>
           </div>
-          <!-- Read in stories -->
+        </div><!--/action-bar-->
+          <!-- Read in stories from model-->
           <div class="row">
             <div class="span8">
               <div class="accordion" id="stories">
@@ -199,11 +200,68 @@
               </div>
             </div>
             <div class="span2 hidden-phone">
-              <h6>More content?</h6>
+              <h6>More content? A League list? Friend list?</h6>
             </div>
           </div>
         </div>
       </div>
+      <!-- Modals -->
+      <div id="game-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Add Game</h3>
+        </div>
+        <div class="modal-body">
+          <p>Form shit</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Add Game</button>
+        </div>
+      </div>
+
+      <div id="league-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Add League</h3>
+        </div>
+        <div class="modal-body">
+          <p>Form shit</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Add League</button>
+        </div>
+      </div>
+
+      <div id="challenge-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Challenge a Friend</h3>
+        </div>
+        <div class="modal-body">
+          <p>Form shit</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Challenge</button>
+        </div>
+      </div>
+
+      <div id="bet-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Make a Bet</h3>
+        </div>
+        <div class="modal-body">
+          <p>Form shit</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Make a Bet</button>
+        </div>
+      </div>
+
     </div>
   </div>
 {% endblock content %}
