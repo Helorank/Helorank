@@ -36,8 +36,8 @@ class Game(models.Model):
   date_created = models.DateTimeField('date created', auto_now_add=True)
 
   def __unicode__(self):
-    player_strings = [unicode(player) for player in self.players]
-    return " ".join(player_strings) + " " + str(date_created)
+    player_strings = [unicode(player) for player in self.players.all()]
+    return " ".join(player_strings) + " " + str(self.date_created)
 
 class Rank(models.Model):
   game = models.ForeignKey(Game)

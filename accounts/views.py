@@ -8,11 +8,13 @@ import hashlib
 
 # Create your views here.
 def dashboard(request):
-  user1 = get_logged_in_user(request)
-  if user1:
-    print "User: " + user1.email
-  return render(request, 'accounts/dashboard.html', {'account': user1})
-  
+  current_user = get_logged_in_user(request)
+  if current_user:
+    print "User: " + current_user.email
+    return render(request, 'accounts/dashboard.html', {'account': current_user})
+  else:
+    return render(request, 'index/login.html', {'error': 'You are not logged in.'})
+
 def create_account_handler(request):
   if request.method == 'GET':
     return create_account_handler_get(request)
@@ -29,7 +31,7 @@ def create_account_handler_post(request):
   #Check for already used password
   if Account.objects.filter(email=email):
     # e-mail has already been used
-    return render(request, 'accounts/createAccount.html',{ "error" : "E-mail has already been used" })
+    return render(request, 'index/signUp.html',{ "error" : "E-mail has already been used" })
   else:
     password = post_dict["password"]
     username = post_dict["username"]

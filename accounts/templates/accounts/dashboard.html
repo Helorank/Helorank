@@ -17,8 +17,9 @@
     <div class="row">
       <!-- Profile -->
       <div id="dashboard-profile" class="span2 affix hidden-phone">
-        <img id="dashboard-pic" src={% static "img/dashboard/dashboard-pic-140x140.jpg" %} placeholder="Kyle">  
-        <h4 class="text-center">{{ user.username }}</h4>
+        <!-- Later add if loop to check for Facebook or Twitter photo -->
+        <img id="dashboard-pic" src="http://www.gravatar.com/avatar/{{ account.gravatar_hash }}?s=140&d=identicon&r=r" placeholder="{{ account.first_name }}">  
+        <h4 class="text-center">{{ account.username }}</h4>
         <div id="avg-rating">
           <h3>2130</h3>
         </div>

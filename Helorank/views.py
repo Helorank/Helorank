@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect
 from accounts.models import Account
 from django.contrib.auth.hashers import check_password
+from util.util import *
+from settings import DEBUG
 
 def index(request):
-  return render(request, 'index/construction.html', {})
+  if DEBUG:
+    return render(request, 'index/construction.html')
+  else:  
+    return render(request, 'index/welcome.html')
   
 # Login methods
 def login(request):
@@ -45,4 +50,9 @@ def signUp(request):
   return render(request, 'index/signUp.html', {})
   
 def welcome(request):
-  return render(request, 'index/welcome.html', {})
+  current_user = get_logged_in_user(request)
+  if current_user:
+    return render(request, 'accounts/dashboard.html', {'account': current_user})
+  else:  
+    return render(request, 'index/welcome.html', {})
+
