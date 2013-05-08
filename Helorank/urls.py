@@ -15,6 +15,7 @@ urlpatterns = patterns('',
   url(r'^signUp/$', views.signUp, name="signUp"),
   url(r'^welcome/$',views.welcome, name="welcome"),
   url(r'^account/', include('accounts.urls', namespace="accounts")),
+  url(r'^admin/', include(admin.site.urls)),
 )
 
 if settings.DEBUG:
