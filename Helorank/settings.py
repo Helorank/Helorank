@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
+import os, sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -28,8 +28,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-AWS_STORAGE_BUCKET_NAME = 'helorank'
-
 
 # Application definition
 
@@ -42,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'storages',
     'accounts',
+    'leagues',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,6 +84,9 @@ else:
         }
     }
 
+if 'test' in sys.argv:
+    DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
@@ -115,7 +117,7 @@ if DEBUG:
         'static',
     )
 else:
-    print 'hello'
+    AWS_STORAGE_BUCKET_NAME = 'helorank'
     AWS_ACCESS_KEY_ID = 'AKIAJFQSQMRXQG4I43TA'
     AWS_SECRET_ACCESS_KEY = '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'
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'

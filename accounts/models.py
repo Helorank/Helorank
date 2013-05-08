@@ -13,8 +13,6 @@ class Account(models.Model):
   last_name = models.CharField(max_length=200, blank=True)
   gravatar_hash = models.CharField(max_length=200, blank=True)
   influence = models.IntegerField(null=True, blank=True)
-#  leagues = models.ManyToManyField(League)
-#  friends = models.ManyToManyField(Account)
 
   def __unicode__(self):
     return self.email
@@ -24,6 +22,3 @@ class Account(models.Model):
 
   def get_full_name(self):
     return u'%s %s' % (self.first_name, self.last_name)
-
-# class Player(models.Model)
-#  account = models.ForeignKey(Account)
