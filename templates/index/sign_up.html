@@ -1,0 +1,69 @@
+{% extends "base/base-external.html" %}
+
+{% block bodypad %}
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+  </style>
+{% endblock %}
+
+{% block title %}Helorank | Sign Up{% endblock %}
+
+{% block content %}
+<div class="container"> <!--content-->
+  <div class="row">
+      <div class="span4 offset4">
+        <div class="alert alert-block alert-error fade in">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <ul>
+            <li>For tomorrow: Append sign_up db error to forms.errors</li>
+            {% for item in form.errors %}
+            <li>{{ item }}</li>
+            {% endfor %}
+            {% if error %}
+              </li>{{ error }}</p>
+            {% endif %}
+          </ul>
+        </div>
+        
+      <h1>Sign up</h1>
+      <hr>
+      <div class="row">
+        <div class="span4">
+          <form>
+            <input id="fb-signup" class="btn btn-block btn-facebook" type="submit" value="Sign up via Facebook">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4">
+          <form>
+            <input id="tw-signup" class="btn btn-block btn-twitter" type="submit" value="Sign up via Twitter">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" span4 text-center pad-or">
+          OR
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4">
+          <form method="post" action="">
+            {% csrf_token %}
+            {{ form.username }}
+            {{ form.email }}
+            {{ form.password }}
+            {{ form.confirm_password }}
+            <input class="btn btn-inverse btn-block" type="submit" value="New Sign Up!">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!--/content-->
+{% endblock %}
+
+{% block scripts %}{% endblock %}
