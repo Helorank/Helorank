@@ -6,10 +6,11 @@ from util.util import *
 import accounts.forms
 import hashlib
 
-def index(request):
-  return render(request, 'index/construction.html')
-  
-# Login methods
+#Add a session wrapper. Distinguish account from user
+
+def under_construction(request):
+  return render(request, 'index/under_construction.html')
+
 def login(request):
   if request.method == "GET":
     return login_get(request)
@@ -37,40 +38,11 @@ def login_post(request):
     # If there is no account for that e-mail
     print "Account doesn't exist"
     return render(request, 'index/login.html', { "error" : "Username does not exist"})
-
-# /Login Methods
   
 def logout(request):
   # Delete all session data
   request.session.flush()
-  return redirect('/welcome')
-
-def signUp(request):
-  return render(request, 'index/signUp.html', {})
-
-def new_sign_up(request):
-  if request.method == 'POST':
-    print unicode('test1')
-    form = accounts.forms.SignUpForm(request.POST)
-    if form.is_valid():
-      print unicode('test2')
-      cleaned_form = form.cleaned_data
-      email = cleaned_form['email']
-      if Account.objects.filter(email=email):
-        return render(request, 'index/sign_up.html', {'form': form, 'error': 'Email has already been used'})
-      else:
-        username = cleaned_form['username']
-        encrypted_password = make_password(cleaned_form['password'])
-        gravatar_hash = hashlib.md5(email.strip().lower()).hexdigest()
-        newAccount = Account(email = email, username=username, password=encrypted_password, gravatar_hash = gravatar_hash)
-        newAccount.save()
-        request.session['account_id'] = newAccount.id
-        context = { 'account' : newAccount }
-        context.update(csrf(request))
-        return render(request,'accounts/dashboard.html',context)
-  else:
-    form = accounts.forms.SignUpForm()
-  return render(request, 'index/sign_up.html', {'form': form})
+  return redirect('/')
   
 def welcome(request):
   current_user = get_logged_in_user(request)

@@ -1,9 +1,7 @@
+from accounts import views
 from django.conf.urls import patterns, url
 
-from accounts import views
-
-urlpatterns = patterns('accounts.views',
-  url(r'^createAccount/$', 'create_account_handler', name='detail'),
-  url(r'^dashboard/$', 'dashboard', name='dashboard'),
-  url(r'^profile/([^/]+)', 'profile')
+urlpatterns = patterns('',
+  url(r'^dashboard/$', views.dashboard, name='dashboard'),
+  url(r'^signup/$', views.signup, name='signup'),
 )

@@ -8,10 +8,15 @@ class SignUpForm(forms.Form):
   age = forms.IntegerField(required=False)
   username = forms.CharField(max_length=50)
   first_name = forms.CharField(required=False, max_length=50)
-  last_name = forms.CharField(required=False, max_length=50) 
+  last_name = forms.CharField(required=False, max_length=50)
+
+  def clean_email(self):
+    # Store email in consistent format. Lowercase. Trimmed.
+    email = self.cleaned_data.get('email')
+    return email.strip().lower() 
 
   def clean_confirm_password(self):
-    # Validate password againt confirm_password
+    # Validate password against confirm_password
     password = self.cleaned_data.get('password')
     confirm_password = self.cleaned_data.get('confirm_password')
     if not confirm_password:
@@ -19,7 +24,4 @@ class SignUpForm(forms.Form):
     if password != confirm_password:
         raise forms.ValidationError("Your passwords do not match")
     return u'confirmed'
-
-class LogInForm(forms.Form):
-  email = forms.EmailField(max_length=100)
-  password = forms.CharField(max_length=100, widget=forms.PasswordInput)
+    

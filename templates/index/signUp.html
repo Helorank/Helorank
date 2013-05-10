@@ -9,18 +9,25 @@
   </style>
 {% endblock %}
 
-{% block title %}Helorank | Log in{% endblock %}
+{% block title %}Helorank | Sign Up{% endblock %}
 
 {% block content %}
 <div class="container"> <!--content-->
   <div class="row">
       <div class="span4 offset4">
-        {% if error %}
         <div class="alert alert-block alert-error fade in">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <p>{{ error }}</p>
+          <ul>
+            <li>For tomorrow: Append sign_up db error to forms.errors</li>
+            {% for item in form.errors %}
+            <li>{{ item }}</li>
+            {% endfor %}
+            {% if error %}
+              </li>{{ error }}</p>
+            {% endif %}
+          </ul>
         </div>
-        {% endif %}
+        
       <h1>Sign up</h1>
       <hr>
       <div class="row">
@@ -44,19 +51,13 @@
       </div>
       <div class="row">
         <div class="span4">
-          <form method="post" action="/account/createAccount/">
+          <form method="post" action="">
             {% csrf_token %}
-            <input name="username" class="input-block-level" type="text" placeholder="Username">
-            <input name="email" class="input-block-level" type="text" placeholder="Email">
-              <div class="row">
-                <div class="span2">
-                  <input name="password" class="input-block-level" type="password" placeholder="Password">
-                </div>
-                <div class="span2">
-                  <input class="input-block-level" type="password" placeholder="Confirm Password">
-                </div>
-              </div>
-            <button id="email-signup" class="btn btn-inverse btn-block" type="submit">Sign up via email</button>
+            {{ form.username }}
+            {{ form.email }}
+            {{ form.password }}
+            {{ form.confirm_password }}
+            <input class="btn btn-inverse btn-block" type="submit" value="New Sign Up!">
           </form>
         </div>
       </div>
