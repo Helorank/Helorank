@@ -18,7 +18,7 @@
         {% if error %}
         <div class="alert alert-block alert-error fade in">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <p>{{ error }}</p>
+          {{ error }}
         </div>
         {% endif %}
       <h1>Log in</h1>
@@ -45,17 +45,17 @@
       </div>
       <div class="row">
         <div class="span4">
-          <form method="post" action="/login/">
+          <form method="post" action="">
             {% csrf_token %}
             <div class="row">
-              <div class="span2">
-                <input name="email" class="input-block-level" type="text" placeholder="Email">
+              <div class="field">
+                {{ form.email }}
               </div>
-              <div class="span2">
-                <input name="password" class="input-block-level" type="password" placeholder="Password">
+              <div class="field">
+                {{ form.password }}
               </div>
             </div>
-            <button id="email-login" class="btn btn-inverse btn-block" type="submit">Log in via email</button>
+            <input class="btn btn-inverse" type="submit" value="Log in via email">
           </form>
           <p>Forget your password? <a href="/signUp">Reset password&raquo;</a></p>
         </div>
