@@ -12,68 +12,52 @@
 {% block title %}Helorank | Sign Up{% endblock %}
 
 {% block content %}
-<div class="container"> <!--content-->
-  <div class="row">
-      <div class="span6 offset3">
-        {% if form.errors %}
-        <div class="alert alert-block alert-error fade in">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          Please correct the error{{ form.errors|pluralize }} below.
-        </div>
-        {% endif %}
-        
-      <h1>Sign up</h1>
-      <hr>
-      <div class="row">
-        <div class="span6">
-          <form>
-            <input id="fb-signup" class="btn btn-facebook" type="submit" value="Sign up via Facebook">
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span6">
-          <form>
-            <input id="tw-signup" class="btn btn-twitter" type="submit" value="Sign up via Twitter">
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class=" span6 text-center pad-or">
-          OR
-        </div>
-      </div>
-      <div class="row">
-        <div class="span6">
-          <form method="post" action="">
-            {% csrf_token %}
-            <div class="field">
-              <label for="id_username">Username</label>
-              {{ form.username.errors }}
-              {{ form.username }}
-            </div>
-            <div class="field">
-              <label for="id_email">Email</label>
-              {{ form.email.errors }}
-              {{ form.email }}
-            </div>
-            <div class="field">
-              <label for="id_password">Password</label>
-              {{ form.password.errors }}
-              {{ form.password }}
-            </div>
-            <div class="field">
-              <label for="id_confirm_password">Confirm</label>
-              {{ form.confirm_password.errors }}
-              {{ form.confirm_password }}
-            </div>
-            <input class="btn btn-inverse" type="submit" value="Sign up">
-          </form>
-        </div>
+<div class="container">
+  <h1>Sign up</h1>
+  <hr>
+  {% if form.errors %}
+    <div class="alert alert-block alert-error fade in">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      Please correct the error{{ form.errors|pluralize }} below.
+    </div>
+  {% endif %}
+  <form class="form-horizontal" method="post" action="">
+    {% csrf_token %}
+    <div class="control-group">
+      <label class="control-label" for="id_username">Username</label>
+      <div class="controls">
+        {{ form.username }}
+        {{ form.username.errors }}
       </div>
     </div>
-  </div>
-</div> <!--/content-->
-{% endblock %}
+    <div class="control-group">
+      <label class="control-label" for="id_email">Email</label>
+      <div class="controls">
+        {{ form.email }}
+        {{ form.email.errors }}
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="id_password">Password</label>
+      <div class="controls">
+        {{ form.password }}
+        {{ form.password.errors }}
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="id_confirm_password">Confirm Password</label>
+      <div class="controls">
+        {{ form.confirm_password }}
+        {{ form.confirm_password.errors }}
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <input class="btn btn-inverse" type="submit" value="Sign up">
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}
 
 {% block scripts %}{% endblock %}

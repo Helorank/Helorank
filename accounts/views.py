@@ -3,6 +3,7 @@ from django.contrib.auth.hashers import *
 from django.core.context_processors import csrf
 from django.shortcuts import render
 from util.util import *
+from accounts import forms
 import accounts
 import hashlib
 

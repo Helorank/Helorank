@@ -7,62 +7,41 @@
       padding-bottom: 40px;
     }
   </style>
-{% endblock %}
+{% endblock bodypad%}
 
 {% block title %}Helorank | Log in{% endblock %}
 
 {% block content %}
 <div class="container"> <!--content-->
-  <div class="row">
-      <div class="span4 offset4">
-        {% if error %}
-        <div class="alert alert-block alert-error fade in">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          {{ error }}
-        </div>
-        {% endif %}
-      <h1>Log in</h1>
-      <hr>
-      <div class="row">
-        <div class="span4">
-          <form>
-            <input id="fb-login" class="btn btn-block btn-facebook" type="submit" value="Log in via Facebook">
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span4">
-          <form>
-            <input id="tw-login" class="btn btn-block btn-twitter" type="submit" value="Log in via Twitter">
-          </form>
-        </div>
-      </div>
-      <p>Not registered? <a href="/signUp">Sign up&raquo;</a></p>
-      <div class="row">
-        <div class=" span4 text-center pad-or">
-          OR
-        </div>
-      </div>
-      <div class="row">
-        <div class="span4">
-          <form method="post" action="">
-            {% csrf_token %}
-            <div class="row">
-              <div class="field">
-                {{ form.email }}
-              </div>
-              <div class="field">
-                {{ form.password }}
-              </div>
-            </div>
-            <input class="btn btn-inverse" type="submit" value="Log in via email">
-          </form>
-          <p>Forget your password? <a href="/signUp">Reset password&raquo;</a></p>
-        </div>
+  <h1>Log in</h1>
+  <hr>
+  {% if error %}
+    <div class="alert alert-block alert-error fade in">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{ error }}
+    </div>
+  {% endif %}
+  <form class="form-horizontal" method="post" action="">
+    {% csrf_token %}
+    <div class="control-group">
+      <label class="control-label" for="id_email">Email</label>
+      <div class="controls">
+        {{ form.email }}
       </div>
     </div>
-  </div>
+    <div class="control-group">
+      <label class="control-label" for="id_password">Password</label>
+      <div class="controls">
+        {{ form.password }}
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <input class="btn btn-inverse" type="submit" value="Log in via email"><br><br> <!-- Fix spacing -->
+        <p><small>Not registered? <a href="/signup">Sign up&raquo;</a></small></p>
+      </div>
+    </div>
+    
+  </form>
 </div> <!--/content-->
-{% endblock %}
-
-{% block scripts %}{% endblock %}
+{% endblock content%}
