@@ -4,21 +4,16 @@ from django.core.context_processors import csrf
 from django.shortcuts import render
 from util.util import *
 from accounts import forms
-import accounts
 import hashlib
 
-# Create your views here.
+
 def dashboard(request):
   current_user = get_logged_in_user(request)
-  if current_user:
-    print "User: " + current_user.email
-    return render(request, 'accounts/dashboard.html', {'account': current_user})
-  else:
-    return render(request, 'index/login.html')
+  return render(request, 'accounts/dashboard.html', { 'account': current_user})
 
 def signup(request):
   if request.method == 'POST':
-    form = accounts.forms.SignUpForm(request.POST)
+    form = forms.SignUpForm(request.POST)
     if form.is_valid():
       cleaned_form = form.cleaned_data
       email = cleaned_form['email']
@@ -32,5 +27,5 @@ def signup(request):
       context.update(csrf(request))
       return render(request,'accounts/dashboard.html', context)
   else:
-    form = accounts.forms.SignUpForm()
+    form = forms.SignUpForm()
   return render(request, 'accounts/signup.html', {'form': form})
