@@ -41,6 +41,8 @@ INSTALLED_APPS = (
     'storages',
     'accounts',
     'leagues',
+    # New! Look at me!
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (

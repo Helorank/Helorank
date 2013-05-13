@@ -16,6 +16,7 @@ def signup(request):
     form = forms.SignUpForm(request.POST)
     if form.is_valid():
       cleaned_form = form.cleaned_data
+      #cleaned_form.save()
       email = cleaned_form['email']
       username = cleaned_form['username']
       encrypted_password = make_password(cleaned_form['password'])
@@ -26,6 +27,8 @@ def signup(request):
       context = { 'account' : newAccount }
       context.update(csrf(request))
       return render(request,'accounts/dashboard.html', context)
+      # Do we need to apply this csrf to the requires login_function?
+      # Why a custom user model instead of django's built-in model.
   else:
     form = forms.SignUpForm()
   return render(request, 'accounts/signup.html', {'form': form})
