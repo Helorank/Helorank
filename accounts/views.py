@@ -16,7 +16,6 @@ def signup(request):
     form = forms.SignUpForm(request.POST)
     if form.is_valid():
       cleaned_form = form.cleaned_data
-      #cleaned_form.save()
       email = cleaned_form['email']
       username = cleaned_form['username']
       encrypted_password = make_password(cleaned_form['password'])
